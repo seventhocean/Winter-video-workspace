@@ -12,6 +12,13 @@ const required = [
   "scripts",
   "shared",
   "cache",
+  "templates/remotion-project/src/schema.ts",
+  "templates/remotion-project/src/Main.tsx",
+  "templates/remotion-project/src/components/Stage.tsx",
+  "templates/remotion-project/src/components/LayerTimeline.tsx",
+  "templates/remotion-project/src/components/BaseVideo.tsx",
+  "templates/remotion-project/src/components/HyperFramesOverlay.tsx",
+  "templates/remotion-project/work/timeline.json",
 ];
 
 let failed = false;

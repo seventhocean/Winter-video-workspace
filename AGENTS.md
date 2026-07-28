@@ -16,6 +16,11 @@
 8. 清理单期项目时不得删除共享依赖；先区分原始素材、最终资产、可再生预览和工具缓存。
 9. 开始新任务前先读取 `会话交接（2026-07-28）.md`，再运行 `npm run check`。
 
+## 常用外部目录
+
+- `/Users/winter/Documents/Obsidian/Owner_known/02-AI自媒体/`：自媒体工作目录，常作为视频制作的素材来源。需要使用时，通过 `npm run link-asset` 链接到对应项目，不在此目录创建视频工程或安装视频依赖。
+- `/Users/winter/Movies/Videos/`：视频存储目录。原始口播与录屏按当天目录保留，正式成片通过 `npm run deliver` 复制到当天目录的 `edit/`。
+
 ## 常用命令
 
 ```bash
@@ -27,6 +32,7 @@ npm run studio -- <项目名>
 npm run still -- <项目名> <Composition> <帧号>
 npm run render -- <项目名> <Composition> <输出文件名> --crf=18
 npm run deliver -- <项目名> <工程内输出> <当天交付目录> <交付文件名>
+npm run smoke
 ```
 
 项目名只使用小写字母、数字和连字符。

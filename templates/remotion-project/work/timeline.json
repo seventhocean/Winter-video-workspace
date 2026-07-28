@@ -1,29 +1,96 @@
 {
+  "fps": 30,
+  "duration": 12,
   "scenes": [
     {
-      "sceneId": "opening",
+      "sceneId": "talking-head-key-line",
       "start": 0,
-      "duration": 3,
+      "duration": 6,
       "styleProfile": "clinical-tech",
-      "layoutProfile": "full-frame-explainer",
+      "layoutProfile": "talking-head-editorial",
       "engine": "remotion",
-      "spatialAnchors": ["top-left", "center-right", "lower-left"],
-      "topology": "editorial-split",
-      "stateChange": "project-ready",
-      "protectedRegions": [],
-      "overlayBudget": 4,
+      "spatialAnchors": ["top-left", "center-right"],
+      "topology": "local-progress",
+      "stateChange": "progress-complete",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle"],
+      "overlayBudget": 2,
       "layers": [
         {
-          "id": "main-title",
-          "role": "primary",
+          "id": "key-line",
+          "role": "context",
+          "kind": "text",
+          "anchor": "top-left",
+          "motionMode": "static-emphasis",
           "appearAt": 0.1,
-          "exitAt": 3
+          "exitAt": 5.8,
+          "title": "重点台词",
+          "body": "人物是主体，动效补充证据",
+          "accent": "accent"
         },
         {
-          "id": "progress",
+          "id": "visual-proof",
+          "role": "primary",
+          "kind": "metric-gauge",
+          "anchor": "center-right",
+          "motionMode": "dynamic-support",
+          "appearAt": 0.32,
+          "emphasizeAt": 2.4,
+          "exitAt": 5.8,
+          "title": "语义完成度",
+          "value": 92,
+          "unit": "%",
+          "accent": "success"
+        }
+      ]
+    },
+    {
+      "sceneId": "complex-system-explainer",
+      "start": 6,
+      "duration": 6,
+      "styleProfile": "clinical-tech",
+      "layoutProfile": "full-frame-explainer",
+      "engine": "hybrid",
+      "spatialAnchors": ["top-left", "center-right", "lower-left"],
+      "topology": "network",
+      "stateChange": "tools-connected",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {
+          "id": "system-network",
+          "role": "primary",
+          "kind": "node-network",
+          "anchor": "center-right",
+          "appearAt": 0.18,
+          "stateAt": 2.4,
+          "exitAt": 5.8,
+          "title": "HYBRID STAGE",
+          "items": ["Remotion", "HyperFrames", "真实素材", "最终合成"],
+          "accent": "accent"
+        },
+        {
+          "id": "context-label",
           "role": "support",
-          "appearAt": 0.3,
-          "exitAt": 3
+          "kind": "text",
+          "anchor": "top-left",
+          "appearAt": 0.06,
+          "exitAt": 5.8,
+          "title": "复杂解释才升级",
+          "body": "一个时间轴，两种引擎",
+          "accent": "warning"
+        },
+        {
+          "id": "ready-state",
+          "role": "support",
+          "kind": "metric-gauge",
+          "anchor": "lower-left",
+          "appearAt": 0.86,
+          "emphasizeAt": 3.2,
+          "exitAt": 5.8,
+          "title": "READY",
+          "value": 100,
+          "unit": "%",
+          "accent": "success"
         }
       ]
     }
