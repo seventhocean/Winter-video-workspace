@@ -1,0 +1,36 @@
+{
+  "name": "winter-video-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "description": "Winter 的集中式视频剪辑与动画工作区",
+  "scripts": {
+    "new": "node scripts/new-project.mjs",
+    "link-asset": "node scripts/link-asset.mjs",
+    "studio": "node scripts/studio.mjs",
+    "compositions": "node scripts/compositions.mjs",
+    "lint": "node scripts/lint.mjs",
+    "render": "node scripts/render.mjs",
+    "still": "node scripts/still.mjs",
+    "deliver": "node scripts/deliver.mjs",
+    "check": "node scripts/check-workspace.mjs",
+    "hyperframes": "npx --yes hyperframes@0.7.77"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.499",
+    "@remotion/media": "4.0.499",
+    "@remotion/tailwind-v4": "4.0.499",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.499",
+    "tailwindcss": "4.0.0"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.499",
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "eslint": "9.19.0",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  }
+}

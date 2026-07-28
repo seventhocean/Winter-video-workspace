@@ -1,0 +1,31 @@
+{
+  "scenes": [
+    {
+      "sceneId": "opening",
+      "start": 0,
+      "duration": 3,
+      "styleProfile": "clinical-tech",
+      "layoutProfile": "full-frame-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "center-right", "lower-left"],
+      "topology": "editorial-split",
+      "stateChange": "project-ready",
+      "protectedRegions": [],
+      "overlayBudget": 4,
+      "layers": [
+        {
+          "id": "main-title",
+          "role": "primary",
+          "appearAt": 0.1,
+          "exitAt": 3
+        },
+        {
+          "id": "progress",
+          "role": "support",
+          "appearAt": 0.3,
+          "exitAt": 3
+        }
+      ]
+    }
+  ]
+}

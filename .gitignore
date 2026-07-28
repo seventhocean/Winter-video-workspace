@@ -1,0 +1,12 @@
+node_modules/
+cache/*
+!cache/.gitkeep
+projects/*/public/*
+!projects/*/public/.gitkeep
+projects/*/output/*
+!projects/*/output/.gitkeep
+projects/*/edit/*
+!projects/*/edit/.gitkeep
+projects/*/work/verify/
+.DS_Store
+*.log
