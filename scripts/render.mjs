@@ -1,5 +1,5 @@
 import path from "node:path";
-import {getProjectDir, remotionBin, run} from "./lib.mjs";
+import {getProjectDir, publicDirArg, remotionBin, run} from "./lib.mjs";
 
 const slug = process.argv[2];
 const composition = process.argv[3];
@@ -17,6 +17,14 @@ const output = path.join("output", outputName);
 const extraArgs = process.argv.slice(5);
 run(
   remotionBin,
-  ["render", "src/index.ts", composition, output, "--codec=h264", ...extraArgs],
+  [
+    "render",
+    "src/index.ts",
+    composition,
+    output,
+    "--codec=h264",
+    publicDirArg(projectDir),
+    ...extraArgs,
+  ],
   {cwd: projectDir},
 );

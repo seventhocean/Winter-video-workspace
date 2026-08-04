@@ -32,6 +32,9 @@ export const remotionBin = path.join(
   "remotion",
 );
 
+export const publicDirArg = (projectDir) =>
+  `--public-dir=${path.join(projectDir, "public")}`;
+
 export const run = (command, args, options = {}) => {
   const result = spawnSync(command, args, {
     stdio: "inherit",

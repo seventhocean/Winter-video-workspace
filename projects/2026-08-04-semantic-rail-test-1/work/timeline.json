@@ -1,0 +1,83 @@
+{
+  "fps": 30,
+  "duration": 11.766666666666667,
+  "scenes": [
+    {
+      "sceneId": "skill-manager-semantic-rail",
+      "start": 0,
+      "duration": 11.766666666666667,
+      "styleProfile": "clinical-tech",
+      "layoutProfile": "talking-head-progressive-stage",
+      "stageTone": "editorial-neutral",
+      "engine": "hybrid",
+      "spatialAnchors": ["top-left", "top-right"],
+      "topology": "stack",
+      "stateChange": "unmanaged-skill-to-managed-workflow",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle"],
+      "overlayBudget": 1,
+      "layers": [],
+      "semanticCues": [
+        {
+          "id": "skill-install",
+          "kind": "metric",
+          "composition": "hero-stat",
+          "at": 0.08,
+          "stateAt": 1.25,
+          "exitAt": 2.64,
+          "eyebrow": "INSTALL FIRST · 先装再说",
+          "hero": "1",
+          "suffix": "CLICK",
+          "secondary": "看到有用的 Skill，就直接安装",
+          "body": "网页也好，Skill 也好，先放进自己的工具箱。",
+          "nodes": ["WEB PAGE", "SKILL.md", "INSTALL"],
+          "accent": "success"
+        },
+        {
+          "id": "skill-versions",
+          "kind": "diagram",
+          "composition": "flow",
+          "at": 2.64,
+          "stateAt": 3.45,
+          "exitAt": 4.92,
+          "eyebrow": "VERSION SPLIT · 版本分叉",
+          "hero": "不同版本，进入不同项目",
+          "body": "同一个 Skill 开始产生项目关系与版本关系。",
+          "nodes": ["SKILL v1", "SKILL v2", "项目 A", "项目 B"],
+          "tags": ["2 VERSION", "2 PROJECT"],
+          "accent": "success"
+        },
+        {
+          "id": "wrong-skill-call",
+          "kind": "text",
+          "composition": "hero-title",
+          "at": 4.92,
+          "stateAt": 6,
+          "exitAt": 7.72,
+          "eyebrow": "WRONG CALL · 错误调用",
+          "hero": "错",
+          "secondary": "Agent 调用了不该用的 Skill",
+          "body": "版本与项目一旦失去映射，调用链就会拿错工具。",
+          "nodes": ["PROJECT B", "AGENT", "SKILL v1"],
+          "accent": "danger"
+        },
+        {
+          "id": "skill-manager",
+          "kind": "steps",
+          "composition": "steps",
+          "at": 7.72,
+          "stateAt": 8.85,
+          "exitAt": 11.65,
+          "eyebrow": "SKILL MANAGER · 统一管理",
+          "hero": "4",
+          "suffix": "STEP",
+          "secondary": "统一管理，才能正确调用",
+          "body": "从索引到调用，把分散的 Skill 重新连成一条清晰路径。",
+          "nodes": ["技能索引", "版本管理", "项目映射", "Agent 调用"],
+          "symbols": ["⌕", "V", "↔", "A"],
+          "tags": ["ONE SOURCE", "PROJECT MAPPING", "SAFE CALL"],
+          "accent": "success"
+        }
+      ]
+    }
+  ]
+}

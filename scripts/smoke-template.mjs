@@ -44,10 +44,34 @@ try {
     "240",
     "smoke-portrait.png",
   ]);
+  run("node", [
+    "scripts/still.mjs",
+    slug,
+    "StageKitLandscape",
+    "420",
+    "smoke-semantic-landscape.png",
+  ]);
+  run("node", [
+    "scripts/still.mjs",
+    slug,
+    "StageKitLandscape",
+    "480",
+    "smoke-semantic-signal.png",
+  ]);
+  run("node", [
+    "scripts/still.mjs",
+    slug,
+    "StageKitPortrait",
+    "600",
+    "smoke-semantic-portrait.png",
+  ]);
 
   for (const file of [
     "output/smoke-landscape.png",
     "output/smoke-portrait.png",
+    "output/smoke-semantic-landscape.png",
+    "output/smoke-semantic-signal.png",
+    "output/smoke-semantic-portrait.png",
   ]) {
     if (!existsSync(path.join(projectDir, file))) {
       throw new Error(`冒烟测试缺少输出：${file}`);

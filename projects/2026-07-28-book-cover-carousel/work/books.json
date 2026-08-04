@@ -1,0 +1,59 @@
+{
+  "fps": 30,
+  "duration": 5.2,
+  "targetBookId": "compound-action",
+  "rollStart": 0.45,
+  "rollEnd": 3.45,
+  "roundsBeforeTarget": 3,
+  "gearTickTimes": [0.57, 0.78, 0.97, 1.14, 1.3, 1.45, 1.59, 1.72, 1.85, 1.98, 2.11, 2.24, 2.38, 2.52, 2.67, 2.83, 3.01, 3.21, 3.38],
+  "settleAt": 3.45,
+  "books": [
+    {
+      "id": "cognition",
+      "title": "认知升级",
+      "author": "演示作者 01",
+      "cover": "covers/01-cognition.svg",
+      "accent": "#FF715B"
+    },
+    {
+      "id": "emotion",
+      "title": "情绪的结构",
+      "author": "演示作者 02",
+      "cover": "covers/02-emotion.svg",
+      "accent": "#FFCA5C"
+    },
+    {
+      "id": "long-term",
+      "title": "长期主义",
+      "author": "演示作者 03",
+      "cover": "covers/03-long-term.svg",
+      "accent": "#5BD6A2"
+    },
+    {
+      "id": "thinking",
+      "title": "思考的边界",
+      "author": "演示作者 04",
+      "cover": "covers/04-thinking.svg",
+      "accent": "#66A7FF"
+    },
+    {
+      "id": "system",
+      "title": "系统之美",
+      "author": "演示作者 05",
+      "cover": "covers/05-system.svg",
+      "accent": "#AA87FF"
+    },
+    {
+      "id": "compound-action",
+      "title": "行动的复利",
+      "author": "本期主推",
+      "cover": "covers/06-compound-action.svg",
+      "accent": "#42DF86"
+    }
+  ],
+  "audio": {
+    "flip": "sfx/page-gear.wav",
+    "roll": "sfx/gear-roll.wav",
+    "stop": "sfx/stop-lock.wav"
+  }
+}

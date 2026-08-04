@@ -25,7 +25,11 @@
 
 ```bash
 npm run new -- <项目名> <YYYY-MM-DD>
+npm run new:shotcraft -- <项目名> <YYYY-MM-DD>
 npm run link-asset -- <项目名> <原始素材绝对路径> <项目内文件名>
+npm run shotcraft:capture -- <项目名>
+npm run check:shotcraft
+npm run smoke:shotcraft
 npm run lint -- <项目名>
 npm run compositions -- <项目名>
 npm run studio -- <项目名>
@@ -41,5 +45,6 @@ npm run smoke
 
 - `winter-video-create`：视频分镜、动画舞台、集中工作区与交付规范。
 - `video-use`：口播剪辑、转写、字幕、音频边界和成片 QA。
+- `video-shotcraft`：产品页面采集、2.5D/3D 运镜、动效节奏与高质量宣传片镜头语言；项目仍由本工作区统一创建和渲染。
 
 项目级 Skill 入口位于 `.codex/skills/`，真实源仍在各自项目仓库中。

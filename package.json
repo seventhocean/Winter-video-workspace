@@ -6,7 +6,11 @@
   "description": "Winter 的集中式视频剪辑与动画工作区",
   "scripts": {
     "new": "node scripts/new-project.mjs",
+    "new:shotcraft": "node scripts/new-shotcraft-project.mjs",
     "link-asset": "node scripts/link-asset.mjs",
+    "shotcraft:capture": "node scripts/shotcraft-capture.mjs",
+    "check:shotcraft": "node scripts/check-shotcraft.mjs",
+    "smoke:shotcraft": "node scripts/smoke-shotcraft.mjs",
     "studio": "node scripts/studio.mjs",
     "compositions": "node scripts/compositions.mjs",
     "lint": "node scripts/lint.mjs",
@@ -18,13 +22,18 @@
     "hyperframes": "npx --yes hyperframes@0.7.77"
   },
   "dependencies": {
+    "@react-three/fiber": "9.7.0",
     "@remotion/cli": "4.0.499",
     "@remotion/media": "4.0.499",
+    "@remotion/motion-blur": "4.0.499",
     "@remotion/tailwind-v4": "4.0.499",
+    "@remotion/three": "4.0.499",
+    "puppeteer": "25.4.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "remotion": "4.0.499",
-    "tailwindcss": "4.0.0"
+    "tailwindcss": "4.0.0",
+    "three": "0.185.1"
   },
   "devDependencies": {
     "@remotion/eslint-config-flat": "4.0.499",

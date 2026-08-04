@@ -1,6 +1,6 @@
 {
   "fps": 30,
-  "duration": 12,
+  "duration": 24,
   "scenes": [
     {
       "sceneId": "talking-head-key-line",
@@ -91,6 +91,90 @@
           "value": 100,
           "unit": "%",
           "accent": "success"
+        }
+      ]
+    },
+    {
+      "sceneId": "semantic-temperature-and-signal",
+      "start": 12,
+      "duration": 6,
+      "styleProfile": "clinical-tech",
+      "layoutProfile": "talking-head-semantic-rail",
+      "engine": "hybrid",
+      "spatialAnchors": ["top-left", "top-right"],
+      "topology": "diagnostic-rail",
+      "stateChange": "safe-temperature-to-remote-action",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle"],
+      "overlayBudget": 1,
+      "layers": [],
+      "semanticCues": [
+        {
+          "id": "temperature-danger",
+          "kind": "thermometer",
+          "at": 0.1,
+          "stateAt": 1.35,
+          "exitAt": 3,
+          "title": "01 · 温度监测 BOT",
+          "label": "育苗大棚 · 高温",
+          "valueFrom": 22,
+          "valueTo": 40,
+          "unit": "°C",
+          "accent": "danger"
+        },
+        {
+          "id": "remote-signal",
+          "kind": "signal-flow",
+          "at": 3,
+          "stateAt": 3.75,
+          "exitAt": 5.8,
+          "title": "02 · 远程控制",
+          "label": "一个指令，抵达现场",
+          "nodes": ["手机指令", "Worker", "ESP32", "电机"],
+          "accent": "accent"
+        }
+      ]
+    },
+    {
+      "sceneId": "semantic-translation-and-gps",
+      "start": 18,
+      "duration": 6,
+      "styleProfile": "clinical-tech",
+      "layoutProfile": "talking-head-progressive-stage",
+      "stageTone": "editorial-neutral",
+      "engine": "hybrid",
+      "spatialAnchors": ["top-left", "top-right"],
+      "topology": "stack",
+      "stateChange": "voice-to-translation-to-auto-log",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle"],
+      "overlayBudget": 1,
+      "layers": [],
+      "semanticCues": [
+        {
+          "id": "translation-wave",
+          "kind": "icon",
+          "composition": "hero-title",
+          "at": 0.1,
+          "stateAt": 1.15,
+          "exitAt": 3,
+          "eyebrow": "VOICE TO MEANING · 先说清楚",
+          "hero": "理解",
+          "secondary": "声音先变成可理解的信息",
+          "symbol": "✦",
+          "body": "让观众先抓住一句可以继续理解的话。"
+        },
+        {
+          "id": "gps-route",
+          "kind": "steps",
+          "composition": "steps",
+          "at": 3,
+          "stateAt": 3.8,
+          "exitAt": 5.8,
+          "eyebrow": "NEXT ACTION · 再往下推进",
+          "hero": "3",
+          "suffix": "STEP",
+          "secondary": "把理解变成下一步行动",
+          "nodes": ["看见重点", "形成关系", "进入行动"],
+          "body": "每一步都在前一步的基础上继续增加。"
         }
       ]
     }

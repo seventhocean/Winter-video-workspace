@@ -1,0 +1,129 @@
+{
+  "template": "stacked",
+  "fps": 30,
+  "duration": 5.2,
+  "rollStart": 0.45,
+  "rollEnd": 3.45,
+  "roundsBeforeTarget": 2,
+  "settleAt": 3.45,
+  "gearTickTimes": [
+    0.45,
+    0.7949,
+    0.9405,
+    1.0542,
+    1.1517,
+    1.2393,
+    1.32,
+    1.3957,
+    1.4677,
+    1.5368,
+    1.6036,
+    1.6687,
+    1.7325,
+    1.7953,
+    1.8574,
+    1.9192,
+    1.9808,
+    2.0426,
+    2.1047,
+    2.1675,
+    2.2313,
+    2.2964,
+    2.3632,
+    2.4323,
+    2.5043,
+    2.58,
+    2.6607,
+    2.7483,
+    2.8458,
+    2.9595,
+    3.1051,
+    3.45
+  ],
+  "items": [
+    {
+      "id": "item-01",
+      "type": "text",
+      "title": "ISTJ"
+    },
+    {
+      "id": "item-02",
+      "type": "text",
+      "title": "ISFJ"
+    },
+    {
+      "id": "item-03",
+      "type": "text",
+      "title": "INFJ"
+    },
+    {
+      "id": "item-04",
+      "type": "text",
+      "title": "ISTP"
+    },
+    {
+      "id": "item-05",
+      "type": "text",
+      "title": "ISFP"
+    },
+    {
+      "id": "item-06",
+      "type": "text",
+      "title": "INFP"
+    },
+    {
+      "id": "item-07",
+      "type": "text",
+      "title": "INTP"
+    },
+    {
+      "id": "item-08",
+      "type": "text",
+      "title": "ESTP"
+    },
+    {
+      "id": "item-09",
+      "type": "text",
+      "title": "ESFP"
+    },
+    {
+      "id": "item-10",
+      "type": "text",
+      "title": "ENFP"
+    },
+    {
+      "id": "item-11",
+      "type": "text",
+      "title": "ENTP"
+    },
+    {
+      "id": "item-12",
+      "type": "text",
+      "title": "ESTJ"
+    },
+    {
+      "id": "item-13",
+      "type": "text",
+      "title": "ESFJ"
+    },
+    {
+      "id": "item-14",
+      "type": "text",
+      "title": "ENFJ"
+    },
+    {
+      "id": "item-15",
+      "type": "text",
+      "title": "ENTJ"
+    },
+    {
+      "id": "item-16",
+      "type": "text",
+      "title": "INTJ"
+    }
+  ],
+  "audio": {
+    "tick": "sfx/crisp-ratchet-click.wav",
+    "stop": "sfx/crisp-ratchet-lock.wav"
+  }
+}

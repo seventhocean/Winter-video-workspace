@@ -1,5 +1,5 @@
 import path from "node:path";
-import {getProjectDir, remotionBin, run} from "./lib.mjs";
+import {getProjectDir, publicDirArg, remotionBin, run} from "./lib.mjs";
 
 const slug = process.argv[2];
 const composition = process.argv[3];
@@ -22,6 +22,7 @@ run(
     composition,
     path.join("output", outputName),
     `--frame=${frame}`,
+    publicDirArg(projectDir),
   ],
   {cwd: projectDir},
 );

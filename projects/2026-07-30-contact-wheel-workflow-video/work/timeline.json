@@ -1,0 +1,250 @@
+{
+  "fps": 30,
+  "duration": 112.7,
+  "scenes": [
+    {
+      "sceneId": "tech-basis",
+      "start": 9.2,
+      "duration": 4.74,
+      "styleProfile": "clinical-tech",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "center", "center-right"],
+      "topology": "left-to-right-flow",
+      "stateChange": "tools-to-video",
+      "protectedRegions": ["subtitle"],
+      "overlayBudget": 4,
+      "layers": [
+        {
+          "id": "tech-flow",
+          "role": "primary",
+          "kind": "node-network",
+          "anchor": "center",
+          "motionMode": "dynamic-support",
+          "appearAt": 0,
+          "exitAt": 4.74,
+          "title": "Remotion + HyperFrames",
+          "items": ["创作工具", "代码动画", "视频"],
+          "accent": "accent"
+        }
+      ]
+    },
+    {
+      "sceneId": "wheel-principle",
+      "start": 13.94,
+      "duration": 8.52,
+      "styleProfile": "clinical-tech",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["center", "lower-left", "lower-right"],
+      "topology": "vertical-loop",
+      "stateChange": "rolling-to-intj-lock",
+      "protectedRegions": ["subtitle"],
+      "overlayBudget": 4,
+      "motionBeats": [
+        {"at": 0, "phase": "establish", "action": "建立连续轮盘窗口"},
+        {"at": 1.2, "phase": "develop", "action": "多轮循环并加速"},
+        {"at": 4.8, "phase": "transform", "action": "进入减速曲线"},
+        {"at": 7.1, "phase": "resolve", "action": "定位到 INTJ"}
+      ],
+      "layers": [
+        {
+          "id": "wheel-track",
+          "role": "primary",
+          "kind": "data-stack",
+          "anchor": "center",
+          "motionMode": "dynamic-support",
+          "appearAt": 0,
+          "stateAt": 7.1,
+          "exitAt": 8.52,
+          "title": "轮盘原理",
+          "items": ["多轮循环", "加速", "减速", "定位"],
+          "accent": "accent"
+        }
+      ]
+    },
+    {
+      "sceneId": "skill-reveal",
+      "start": 22.46,
+      "duration": 6.02,
+      "styleProfile": "clinical-tech",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["center-left", "center", "center-right"],
+      "topology": "input-skill-output",
+      "stateChange": "logic-packaged-as-skill",
+      "protectedRegions": ["subtitle"],
+      "overlayBudget": 5,
+      "motionBeats": [
+        {"at": 0, "phase": "establish", "action": "逻辑节点向中心聚拢"},
+        {"at": 1.6, "phase": "develop", "action": "封装为 Contact Wheel"},
+        {"at": 3.4, "phase": "transform", "action": "展开图片文本输入与两种输出"},
+        {"at": 5.1, "phase": "resolve", "action": "实测走起"}
+      ],
+      "layers": [
+        {
+          "id": "contact-wheel-skill",
+          "role": "primary",
+          "kind": "node-network",
+          "anchor": "center",
+          "motionMode": "dynamic-support",
+          "appearAt": 0,
+          "stateAt": 3.4,
+          "exitAt": 6.02,
+          "title": "Contact Wheel",
+          "items": ["图片", "文本", "竖向轮播", "层层堆叠"],
+          "accent": "accent"
+        }
+      ]
+    },
+    {
+      "sceneId": "template-reel",
+      "start": 39.24,
+      "duration": 5.66,
+      "styleProfile": "clinical-tech",
+      "layoutProfile": "presentation-protected",
+      "engine": "remotion",
+      "spatialAnchors": ["center-left", "center-right"],
+      "topology": "title-and-portrait-proof",
+      "stateChange": "reel-template-demonstrated",
+      "protectedRegions": ["subtitle", "portrait-video"],
+      "overlayBudget": 2,
+      "layers": [
+        {
+          "id": "reel-video",
+          "role": "primary",
+          "kind": "asset-frame",
+          "anchor": "center-right",
+          "motionMode": "dynamic-support",
+          "appearAt": 0,
+          "exitAt": 5.66,
+          "title": "模板一｜竖向轮播",
+          "assetId": "template-reel-intj.mp4",
+          "accent": "accent"
+        }
+      ]
+    },
+    {
+      "sceneId": "template-stacked",
+      "start": 44.9,
+      "duration": 4.1,
+      "styleProfile": "clinical-tech",
+      "layoutProfile": "presentation-protected",
+      "engine": "remotion",
+      "spatialAnchors": ["center-left", "center-right"],
+      "topology": "title-and-portrait-proof",
+      "stateChange": "stacked-template-demonstrated",
+      "protectedRegions": ["subtitle", "portrait-video"],
+      "overlayBudget": 2,
+      "layers": [
+        {
+          "id": "stacked-video",
+          "role": "primary",
+          "kind": "asset-frame",
+          "anchor": "center-right",
+          "motionMode": "dynamic-support",
+          "appearAt": 0,
+          "exitAt": 4.1,
+          "title": "模板二｜层层堆叠",
+          "assetId": "template-stacked-mbti.mp4",
+          "accent": "accent"
+        }
+      ]
+    },
+    {
+      "sceneId": "use-cases",
+      "start": 49,
+      "duration": 4.22,
+      "styleProfile": "clinical-tech",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["center-left", "center", "center-right"],
+      "topology": "category-reveal",
+      "stateChange": "single-template-to-multiple-topics",
+      "protectedRegions": ["subtitle"],
+      "overlayBudget": 4,
+      "layers": [
+        {
+          "id": "topic-categories",
+          "role": "primary",
+          "kind": "data-stack",
+          "anchor": "center",
+          "motionMode": "dynamic-support",
+          "appearAt": 0,
+          "exitAt": 4.22,
+          "title": "不只是一种题材",
+          "items": ["心理疗愈", "图书讲解", "MBTI", "AI 工具"],
+          "accent": "accent"
+        }
+      ]
+    },
+    {
+      "sceneId": "reusable-workflow",
+      "start": 53.22,
+      "duration": 9.84,
+      "styleProfile": "clinical-tech",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["center-left", "center", "center-right"],
+      "topology": "input-skill-output",
+      "stateChange": "content-swapped-template-reused",
+      "protectedRegions": ["subtitle"],
+      "overlayBudget": 5,
+      "motionBeats": [
+        {"at": 0, "phase": "establish", "action": "展示文本或图片输入"},
+        {"at": 2, "phase": "develop", "action": "通过 Contact Wheel 生成"},
+        {"at": 4.2, "phase": "transform", "action": "快速替换两轮输入内容"},
+        {"at": 8.3, "phase": "resolve", "action": "强调换内容不重剪"}
+      ],
+      "layers": [
+        {
+          "id": "workflow",
+          "role": "primary",
+          "kind": "node-network",
+          "anchor": "center",
+          "motionMode": "dynamic-support",
+          "appearAt": 0,
+          "stateAt": 4.2,
+          "exitAt": 9.84,
+          "title": "换内容，不重剪",
+          "items": ["新文本 / 新图片", "Contact Wheel Skill", "新视频开头"],
+          "accent": "accent"
+        }
+      ]
+    },
+    {
+      "sceneId": "time-saving",
+      "start": 63.06,
+      "duration": 6.74,
+      "styleProfile": "clinical-tech",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["center-left", "center-right", "lower-left"],
+      "topology": "before-after-contrast",
+      "stateChange": "manual-repeat-to-fixed-workflow",
+      "protectedRegions": ["subtitle"],
+      "overlayBudget": 5,
+      "motionBeats": [
+        {"at": 0, "phase": "establish", "action": "展开传统重复剪辑步骤"},
+        {"at": 2, "phase": "develop", "action": "出现 Skill 方式"},
+        {"at": 3.8, "phase": "transform", "action": "替换内容并一键生成"},
+        {"at": 5.3, "phase": "resolve", "action": "固定工作流收束"}
+      ],
+      "layers": [
+        {
+          "id": "efficiency-contrast",
+          "role": "primary",
+          "kind": "data-stack",
+          "anchor": "center",
+          "motionMode": "dynamic-support",
+          "appearAt": 0,
+          "stateAt": 3.8,
+          "exitAt": 6.74,
+          "title": "把重复劳动，变成固定工作流",
+          "items": ["重复剪辑", "调节速度", "对齐音效", "替换内容", "一键生成"],
+          "accent": "success"
+        }
+      ]
+    }
+  ]
+}
