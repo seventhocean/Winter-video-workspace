@@ -27,6 +27,14 @@ export type LayerKind =
 
 export type MotionMode = "static-emphasis" | "dynamic-support";
 
+export type StyleProfile = "editorial-neutral" | "clinical-tech";
+
+export type SceneMode =
+  | "talking-head"
+  | "explainer"
+  | "protected-operation"
+  | "asset-visual";
+
 export type SemanticCueKind =
   | "text"
   | "icon"
@@ -105,8 +113,11 @@ export type StageScene = {
   sceneId: string;
   start: number;
   duration: number;
-  styleProfile: "clinical-tech";
+  styleProfile: StyleProfile;
+  /** 新时间轴使用三层入口；旧项目可暂时省略，由 layoutProfile 推断。 */
+  sceneMode?: SceneMode;
   layoutProfile: string;
+  /** @deprecated 仅用于读取历史时间轴，新项目使用 styleProfile。 */
   stageTone?: "clinical-tech" | "editorial-neutral";
   stagePosition?: "left" | "right";
   engine: "remotion" | "hyperframes" | "hybrid";

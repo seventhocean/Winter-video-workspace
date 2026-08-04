@@ -1,7 +1,7 @@
 import type {CSSProperties, ReactNode} from "react";
 import {Img, interpolate, staticFile, useCurrentFrame, useVideoConfig} from "remotion";
 import type {SemanticCue, StageScene} from "../schema";
-import {accentColor, theme} from "../theme";
+import {accentColor, getProgressivePalette, theme} from "../theme";
 
 const ease = (frame: number, from: number, length = 14) =>
   interpolate(frame, [from, from + length], [0, 1], {
@@ -364,7 +364,8 @@ export const EditorialStage = ({scene}: {scene: StageScene}) => {
   const nextFrame = cues[activeIndex + 1] ? Math.round(cues[activeIndex + 1].at * fps) : Math.round(scene.duration * fps);
   const enter = ease(frame, cueFrame, 12);
   const leave = interpolate(frame, [nextFrame - 8, nextFrame], [1, 0], {extrapolateLeft: "clamp", extrapolateRight: "clamp"});
-  const color = accentColor(cue.accent ?? "success");
+  const palette = getProgressivePalette(scene.styleProfile);
+  const color = accentColor(cue.accent ?? "success", scene.styleProfile);
   const Component = editorialComponents[cue.composition ?? "hero-title"] ?? HeroTitle;
   const right = scene.stagePosition === "right";
 
@@ -375,7 +376,7 @@ export const EditorialStage = ({scene}: {scene: StageScene}) => {
         top: portrait ? 150 : 92,
         ...(right ? {right: portrait ? 70 : 86} : {left: portrait ? 70 : 86}),
         width: portrait ? 820 : 790,
-        color: "#fff",
+        color: palette.text,
         zIndex: 7,
         opacity: enter * leave,
         transform: `translateX(${(1 - enter) * (right ? 28 : -28)}px)`,

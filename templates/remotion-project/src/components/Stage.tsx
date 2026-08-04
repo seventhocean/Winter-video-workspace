@@ -1,7 +1,7 @@
 import type {CSSProperties} from "react";
 import {AbsoluteFill, useVideoConfig} from "remotion";
 import type {Anchor, StageScene} from "../schema";
-import {theme} from "../theme";
+import {getProgressivePalette, styleVariables, theme} from "../theme";
 import {LayerTimeline} from "./LayerTimeline";
 import {SafeZone} from "./SafeZone";
 import {StageTopology} from "./StageTopology";
@@ -41,11 +41,13 @@ export const Stage = ({
   const slots = height > width ? portraitSlots : landscapeSlots;
   const semanticRail = scene.layoutProfile === "talking-head-semantic-rail";
   const editorialStage = scene.layoutProfile === "talking-head-progressive-stage";
+  const palette = getProgressivePalette(scene.styleProfile);
 
   return (
     <AbsoluteFill
       style={{
-        color: theme.text,
+        ...styleVariables(scene.styleProfile),
+        color: palette.text,
         fontFamily: theme.bodyFont,
         overflow: "hidden",
       }}

@@ -953,7 +953,7 @@ export const ProgressiveStage = ({ scene }: { scene: StageScene }) => {
   const { fps, width, height } = useVideoConfig();
   const portrait = height > width;
   const genericStage = scene.layoutProfile === "talking-head-progressive-stage";
-  const tone = scene.stageTone ?? (genericStage ? "editorial-neutral" : "clinical-tech");
+  const tone = scene.stageTone ?? scene.styleProfile ?? (genericStage ? "editorial-neutral" : "clinical-tech");
   const palette = getProgressivePalette(tone);
   const stagePosition = scene.stagePosition ?? "left";
   const cues = scene.semanticCues ?? [];

@@ -2,7 +2,7 @@ import {AbsoluteFill, Sequence, useVideoConfig} from "remotion";
 import type {StageKitProps} from "./schema";
 import {BaseVideo} from "./components/BaseVideo";
 import {Stage} from "./components/Stage";
-import {theme} from "./theme";
+import {styleVariables, theme} from "./theme";
 
 export const Main = ({
   sourceFile,
@@ -16,7 +16,13 @@ export const Main = ({
   const scale = width / designWidth;
 
   return (
-    <AbsoluteFill style={{backgroundColor: theme.background, overflow: "hidden"}}>
+    <AbsoluteFill
+      style={{
+        ...styleVariables(timeline.scenes[0]?.styleProfile ?? "editorial-neutral"),
+        backgroundColor: theme.background,
+        overflow: "hidden",
+      }}
+    >
       <div
         style={{
           position: "absolute",

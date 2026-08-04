@@ -1,7 +1,7 @@
 import {AbsoluteFill, useCurrentFrame} from "remotion";
 import type {StageScene} from "../schema";
 import {progress} from "../motion";
-import {theme} from "../theme";
+import {accentColor} from "../theme";
 
 const paths: Record<string, string> = {
   "curved-flow": "M 8 24 C 30 4, 62 82, 92 28",
@@ -39,7 +39,7 @@ export const StageTopology = ({scene}: {scene: StageScene}) => {
         <path
           d={path}
           fill="none"
-          stroke={theme.accent}
+          stroke={accentColor("accent", scene.styleProfile)}
           strokeWidth=".35"
           strokeDasharray="130"
           strokeDashoffset={130 * (1 - draw)}
