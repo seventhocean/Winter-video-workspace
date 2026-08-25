@@ -7,11 +7,19 @@ import {
 } from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import {projectsRoot, requireSlug, workspaceRoot} from "./lib.mjs";
+import {
+  getDatedProjectDir,
+  requireProjectDate,
+  requireSlug,
+  workspaceRoot,
+} from "./lib.mjs";
 
 const slug = requireSlug(process.argv[2]);
-const date = process.argv[3] ?? new Date().toISOString().slice(0, 10);
-const target = path.join(projectsRoot, slug);
+const date = requireProjectDate(
+  process.argv[3] ?? new Date().toISOString().slice(0, 10),
+);
+const projectId = `${date}/${slug}`;
+const target = getDatedProjectDir(date, slug);
 const skillRoot =
   process.env.SHOTCRAFT_SKILL_ROOT ??
   path.join(os.homedir(), ".codex", "skills", "video-shotcraft");
@@ -33,7 +41,7 @@ if (!existsSync(template) || !existsSync(captureTemplate)) {
   throw new Error(`video-shotcraft 模板不完整：${skillRoot}`);
 }
 
-mkdirSync(projectsRoot, {recursive: true});
+mkdirSync(path.dirname(target), {recursive: true});
 cpSync(template, target, {
   recursive: true,
   filter: (source) => {
@@ -58,6 +66,7 @@ writeFileSync(
   `${JSON.stringify(
     {
       slug,
+      projectId,
       created: date,
       workspace: workspaceRoot,
       template: "video-shotcraft",
@@ -77,6 +86,7 @@ writeFileSync(
 );
 
 console.log(`已创建 Shotcraft 项目：${target}`);
-console.log(`预览：npm run studio -- ${slug}`);
-console.log(`采集网页：npm run shotcraft:capture -- ${slug}`);
-console.log(`静帧：npm run still -- ${slug} AiflPromo 150`);
+console.log(`项目标识：${projectId}`);
+console.log(`预览：npm run studio -- ${projectId}`);
+console.log(`采集网页：npm run shotcraft:capture -- ${projectId}`);
+console.log(`静帧：npm run still -- ${projectId} AiflPromo 150`);

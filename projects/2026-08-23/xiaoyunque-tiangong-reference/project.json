@@ -1,0 +1,11 @@
+{
+  "slug": "xiaoyunque-tiangong-reference",
+  "projectId": "2026-08-23/xiaoyunque-tiangong-reference",
+  "created": "2026-08-23",
+  "workspace": "/Users/winter/Documents/Project/Winter-video-workspace",
+  "template": "winter-video-create/remotion-project-base",
+  "templateSource": "/Users/winter/Documents/Project/Winter-video-workspace/.codex/skills/winter-video-create/assets/remotion-project-base",
+  "sourcePolicy": "link-only",
+  "dependencyPolicy": "workspace-shared",
+  "deliveryStatus": "draft"
+}

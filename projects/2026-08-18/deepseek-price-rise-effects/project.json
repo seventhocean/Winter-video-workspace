@@ -1,0 +1,13 @@
+{
+  "slug": "deepseek-price-rise-effects",
+  "projectId": "2026-08-18/deepseek-price-rise-effects",
+  "created": "2026-08-18",
+  "workspace": "/Users/winter/Documents/Project/Winter-video-workspace",
+  "template": "winter-video-create/remotion-project-base",
+  "templateSource": "/Users/winter/Documents/Project/Winter-video-workspace/.codex/skills/winter-video-create/assets/remotion-project-base",
+  "sourcePolicy": "link-only",
+  "dependencyPolicy": "workspace-shared",
+  "deliveryStatus": "delivered",
+  "deliveryPath": "/Users/winter/Movies/Videos/8月19Deepseek涨价/edit/DeepSeek涨价-递进动效终版.mp4",
+  "deliverySha256": "678b13f0323234c0807673278848c484db4be0423a0ba1d72952678b4e3300d1"
+}

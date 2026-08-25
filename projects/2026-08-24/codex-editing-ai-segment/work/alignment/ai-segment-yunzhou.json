@@ -1,0 +1,26 @@
+{
+  "source": "ChatCut Doubao TTS + ChatCut transcript",
+  "provider": "doubao",
+  "voiceId": "yunzhou",
+  "speedRatio": 1.08,
+  "assetId": "bf80807c31",
+  "jobId": "d467dd400c",
+  "duration": 42.072,
+  "cues": [
+    {"start": 0.28, "end": 2.68, "text": "现在你听到的声音、看到的字幕", "motionSubject": "声音与字幕通道", "visualAction": "两个通道依次接通", "payoffAt": 2.43},
+    {"start": 2.79, "end": 5.51, "text": "界面和动画，全部由AI生成", "motionSubject": "界面与动画通道", "visualAction": "四通道汇入AI GENERATED", "payoffAt": 5.31},
+    {"start": 5.75, "end": 8.59, "text": "我只需要把文章或者文本稿交给Codex", "motionSubject": "文本输入节点", "visualAction": "文本节点进入Codex生产线", "payoffAt": 8.59},
+    {"start": 8.83, "end": 10.4, "text": "再配合我的视频Skill", "motionSubject": "视频Skill节点", "visualAction": "Skill节点接通", "payoffAt": 10.4},
+    {"start": 10.76, "end": 12.43, "text": "它会先生成AI旁白", "motionSubject": "AI旁白节点", "visualAction": "旁白节点进入运行态", "payoffAt": 12.43},
+    {"start": 12.58, "end": 14.34, "text": "把声音对齐到每一句话", "motionSubject": "声音对齐节点", "visualAction": "句子级时间轴完成", "payoffAt": 14.34},
+    {"start": 14.62, "end": 16.62, "text": "然后按照分镜制作动画", "motionSubject": "分镜动画节点", "visualAction": "节点推进并完成", "payoffAt": 16.62},
+    {"start": 16.78, "end": 18.14, "text": "合成字幕和音效", "motionSubject": "字幕音效节点", "visualAction": "合成状态接通", "payoffAt": 18.14},
+    {"start": 18.42, "end": 20.92, "text": "最后直接生成一条完整的视频", "motionSubject": "完整视频节点", "visualAction": "生产线到达输出态", "payoffAt": 20.92},
+    {"start": 21.4, "end": 26.2, "text": "我前几期发过的《如何从零手搓一个Skill》，就是用这种方式完成的", "motionSubject": "真实案例画面", "visualAction": "成片关键帧进入证据框", "payoffAt": 26.2},
+    {"start": 26.44, "end": 28.08, "text": "整条视频接近五分钟", "motionSubject": "完整时长数据", "visualAction": "五分钟指标高亮", "payoffAt": 28.08},
+    {"start": 28.24, "end": 32.62, "text": "从声音、字幕到里面的界面和动画，全程没有真人出镜", "motionSubject": "真人出镜数据", "visualAction": "零真人出镜指标完成", "payoffAt": 32.62},
+    {"start": 32.92, "end": 36.08, "text": "我也没有打开时间轴手动调整任何一帧动画", "motionSubject": "手动调整数据", "visualAction": "零帧手调指标完成", "payoffAt": 36.08},
+    {"start": 36.2, "end": 37.43, "text": "这就是第二种方式", "motionSubject": "方式二结论", "visualAction": "全AI剪辑落版", "payoffAt": 37.43},
+    {"start": 37.76, "end": 41.9, "text": "从一份文本开始，由Codex和Skill完成整条视频", "motionSubject": "文本到视频流程", "visualAction": "文本穿过AI节点输出完整视频", "payoffAt": 41.9}
+  ]
+}

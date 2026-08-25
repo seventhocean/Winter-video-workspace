@@ -1,0 +1,28 @@
+{
+  "fps": 30,
+  "duration": 9.833,
+  "scenes": [
+    {
+      "sceneId": "opening-progressive",
+      "start": 0,
+      "duration": 9.833,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "talking-head",
+      "layoutProfile": "talking-head-progressive-stage",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "top-right"],
+      "topology": "house-to-network-to-filter",
+      "stateChange": "empty-runtime-to-top-five",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle"],
+      "overlayBudget": 1,
+      "layers": [],
+      "semanticCues": [
+        {"id": "harness", "kind": "icon", "composition": "hero-title", "at": 0.18, "stateAt": 1.18, "exitAt": 1.65, "eyebrow": "DEEPSEEK / AGENT RUNTIME", "hero": "DEEPSEEK HARNESS", "secondary": "安装完成", "symbol": "+"},
+        {"id": "no-plugin", "kind": "diagram", "composition": "flow", "at": 1.55, "stateAt": 2.72, "exitAt": 3.46, "hero": "没有插件", "secondary": "空插槽无法扩展能力", "nodes": ["Harness", "空插槽", "未扩展"]},
+        {"id": "raw-house", "kind": "image", "composition": "media", "at": 3.35, "stateAt": 5.03, "exitAt": 5.62, "hero": "买了房，不装修", "secondary": "框架存在，能力还是毛坯"},
+        {"id": "community", "kind": "metric", "composition": "hero-stat", "at": 5.55, "stateAt": 7.16, "exitAt": 7.55, "hero": "300+", "suffix": "PLUGINS", "secondary": "社区插件生态"},
+        {"id": "top-five", "kind": "steps", "composition": "steps", "at": 7.43, "stateAt": 9.24, "exitAt": 9.833, "eyebrow": "WINTER'S SHORTLIST", "hero": "TOP 5", "secondary": "最值得安装的插件", "nodes": ["1", "2", "3", "4", "5"]}
+      ]
+    }
+  ]
+}

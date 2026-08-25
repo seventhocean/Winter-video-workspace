@@ -1,0 +1,159 @@
+{
+  "fps": 30,
+  "duration": 135.3,
+  "composition": "Main58",
+  "canvas": {
+    "width": 2160,
+    "height": 4678,
+    "contentTop": 419,
+    "contentHeight": 3840,
+    "blackBarPolicy": "上下黑边保持纯黑，所有叠加元素只进入中间真实画面区"
+  },
+  "styleSystem": {
+    "theme": "白底、黑色粗体、高饱和蓝色强调",
+    "semanticModel": "主干—分支—叶节点",
+    "motionRule": "重点先放大进入，再缩小归档；同一分支持续生长，分叉时才清场",
+    "shapeRule": "优先实心图标和粗体字，减少细线与同构卡片"
+  },
+  "scenes": [
+    {
+      "sceneId": "opening-trunk",
+      "start": 0.2,
+      "duration": 9.5,
+      "styleProfile": "editorial-neutral",
+      "sceneMode": "talking-head",
+      "layoutProfile": "talking-head-progressive-stage",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "lower-right"],
+      "topology": "trunk-to-summary-flow",
+      "stateChange": "experiments-to-complete-workflow",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle", "black-bars"],
+      "overlayBudget": 2,
+      "layers": [],
+      "semanticCues": [
+        {"id":"ten-plus-tests","kind":"metric","composition":"hero-stat","at":0.06,"stateAt":1.2,"exitAt":9.35,"hero":"10+","suffix":"视频测试","secondary":"终于跑通"},
+        {"id":"codex-editing","kind":"icon","composition":"hero-title","at":3.55,"stateAt":4.35,"exitAt":9.35,"hero":"Codex剪辑","secondary":"从实验进入工作流","symbol":"C"},
+        {"id":"workflow-ready","kind":"text","composition":"hero-title","at":5.15,"stateAt":6.05,"exitAt":9.35,"hero":"流程跑通","secondary":"这一次，不再只是样片"},
+        {"id":"opening-summary","kind":"steps","composition":"steps","at":6.5,"stateAt":7.2,"exitAt":9.35,"hero":"完整流程","nodes":["口播","素材","Codex","成片"]}
+      ]
+    },
+    {
+      "sceneId": "first-method-branch",
+      "start": 9.92,
+      "duration": 50.46,
+      "styleProfile": "editorial-neutral",
+      "sceneMode": "talking-head",
+      "layoutProfile": "talking-head-progressive-stage",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "top-right", "lower-left", "lower-right"],
+      "topology": "two-branches-with-progressive-leaves",
+      "stateChange": "method-choice-to-human-workflow-to-ai-branch",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle", "black-bars"],
+      "overlayBudget": 4,
+      "layers": [],
+      "semanticCues": [
+        {"id":"two-methods","kind":"text","composition":"hero-title","at":0.06,"stateAt":0.8,"exitAt":50.3,"hero":"2种方式","secondary":"同一套 Skill，两条剪辑路径"},
+        {"id":"human-branch","kind":"diagram","composition":"flow","at":1.7,"stateAt":2.5,"exitAt":46.2,"hero":"真 人 口 播","nodes":["真人口播","AI生成"]},
+        {"id":"record-person","kind":"icon","composition":"hero-title","at":3.74,"stateAt":4.45,"exitAt":15.7,"hero":"拍好人物口播","symbol":"●"},
+        {"id":"add-assets","kind":"icon","composition":"hero-title","at":4.92,"stateAt":6.0,"exitAt":15.7,"hero":"加入素材＋录屏","symbol":"▰"},
+        {"id":"hand-to-codex","kind":"icon","composition":"hero-title","at":9.06,"stateAt":9.8,"exitAt":15.7,"hero":"一股脑交给 Codex","symbol":"C"},
+        {"id":"timed-subtitles","kind":"steps","composition":"steps","at":10.66,"stateAt":12.0,"exitAt":15.7,"hero":"识别口播，生成时间字幕","nodes":["识别","对齐","字幕"]},
+        {"id":"human-summary","kind":"steps","composition":"steps","at":13.16,"stateAt":14.0,"exitAt":15.7,"hero":"真人口播剪辑流程","nodes":["口播","素材","Codex","识别","字幕"]},
+        {"id":"sentence-decision","kind":"text","composition":"hero-title","at":15.8,"stateAt":16.55,"exitAt":30.0,"hero":"每句话，逐句判断","secondary":"画面跟着语义变化"},
+        {"id":"keep-person","kind":"icon","composition":"hero-title","at":16.9,"stateAt":17.55,"exitAt":30.0,"hero":"保留人物","symbol":"人"},
+        {"id":"switch-screen","kind":"icon","composition":"hero-title","at":17.9,"stateAt":18.55,"exitAt":30.0,"hero":"切换录屏","symbol":"▰"},
+        {"id":"zoom-operation","kind":"image","composition":"media","at":18.08,"stateAt":19.0,"exitAt":30.0,"hero":"放大操作"},
+        {"id":"follow-timeline","kind":"steps","composition":"steps","at":19.72,"stateAt":20.8,"exitAt":30.0,"hero":"跟随时间轴","nodes":["口播","动作","画面"]},
+        {"id":"number-appears","kind":"metric","composition":"hero-stat","at":22.26,"stateAt":23.2,"exitAt":30.0,"hero":"数字出现","secondary":"重点数据直接可视化"},
+        {"id":"steps-progress","kind":"steps","composition":"steps","at":26.28,"stateAt":27.4,"exitAt":30.0,"hero":"步骤推进","nodes":["第一步","第二步","第三步"]},
+        {"id":"operation-demo","kind":"image","composition":"media","at":30.13,"stateAt":31.2,"exitAt":40.2,"hero":"实景演示","secondary":"画面服务于正在发生的操作"},
+        {"id":"protect-button","kind":"icon","composition":"hero-title","at":33.72,"stateAt":34.5,"exitAt":40.2,"hero":"保护按钮","symbol":"■"},
+        {"id":"protect-cursor","kind":"icon","composition":"hero-title","at":36.26,"stateAt":37.0,"exitAt":40.2,"hero":"保护光标","symbol":"▲"},
+        {"id":"no-cover-info","kind":"text","composition":"hero-title","at":38.2,"stateAt":39.0,"exitAt":40.2,"hero":"不遮挡信息"},
+        {"id":"post-production","kind":"steps","composition":"steps","at":40.34,"stateAt":41.3,"exitAt":46.15,"hero":"后期收尾","nodes":["字幕","转场","BGM"]},
+        {"id":"ai-branch","kind":"diagram","composition":"flow","at":46.22,"stateAt":47.0,"exitAt":50.3,"hero":"AI生成","secondary":"无需真人出镜","nodes":["文本稿","AI旁白","动画","完整视频"]}
+      ]
+    },
+    {
+      "sceneId": "existing-ai-generated-section",
+      "start": 60.38,
+      "duration": 39.12,
+      "styleProfile": "editorial-neutral",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "full-screen-asset",
+      "engine": "remotion",
+      "spatialAnchors": ["full-screen"],
+      "topology": "source-visual",
+      "stateChange": "existing-ai-section-kept-intact",
+      "protectedRegions": ["entire-source-frame", "black-bars"],
+      "overlayBudget": 1,
+      "layers": [
+        {"id":"source-ai-section","role":"primary","assetId":"draft-render.mov","appearAt":0,"exitAt":39.12}
+      ]
+    },
+    {
+      "sceneId": "return-core-process",
+      "start": 99.5,
+      "duration": 9.68,
+      "styleProfile": "editorial-neutral",
+      "sceneMode": "talking-head",
+      "layoutProfile": "talking-head-progressive-stage",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "lower-right"],
+      "topology": "shared-core-process",
+      "stateChange": "return-to-person-to-common-skill-core",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle", "black-bars"],
+      "overlayBudget": 2,
+      "layers": [],
+      "semanticCues": [
+        {"id":"return-person","kind":"text","composition":"hero-title","at":0.04,"stateAt":0.7,"exitAt":9.5,"hero":"回到人物"},
+        {"id":"same-skill","kind":"icon","composition":"hero-title","at":1.0,"stateAt":1.8,"exitAt":9.5,"hero":"同一个 Skill","symbol":"C"},
+        {"id":"read-visual","kind":"image","composition":"media","at":2.1,"stateAt":3.0,"exitAt":9.5,"hero":"读懂画面"},
+        {"id":"build-timeline","kind":"steps","composition":"steps","at":3.5,"stateAt":4.4,"exitAt":9.5,"hero":"生成时间轴","nodes":["语句","时间","画面"]},
+        {"id":"arrange-visuals","kind":"diagram","composition":"flow","at":5.0,"stateAt":5.9,"exitAt":9.5,"hero":"安排画面","nodes":["素材","动效","字幕"]},
+        {"id":"voice-synthesis","kind":"icon","composition":"hero-title","at":6.8,"stateAt":7.8,"exitAt":9.5,"hero":"语音合成","symbol":"●"}
+      ]
+    },
+    {
+      "sceneId": "two-methods-comparison",
+      "start": 109.16,
+      "duration": 13.42,
+      "styleProfile": "editorial-neutral",
+      "sceneMode": "talking-head",
+      "layoutProfile": "talking-head-progressive-stage",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "top-right", "lower-left", "lower-right"],
+      "topology": "side-by-side-branch-comparison",
+      "stateChange": "shared-skill-to-two-production-modes",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle", "black-bars"],
+      "overlayBudget": 3,
+      "layers": [],
+      "semanticCues": [
+        {"id":"compare-core","kind":"text","composition":"hero-title","at":0.04,"stateAt":0.75,"exitAt":13.2,"hero":"同一个 Skill"},
+        {"id":"human-mode","kind":"steps","composition":"steps","at":1.0,"stateAt":2.0,"exitAt":13.2,"hero":"真人口播","nodes":["真人出镜","录制口播","Codex后期"]},
+        {"id":"ai-mode","kind":"steps","composition":"steps","at":4.1,"stateAt":5.2,"exitAt":13.2,"hero":"AI生成","nodes":["无需出镜","AI语音","完整生成"]}
+      ]
+    },
+    {
+      "sceneId": "open-source-closing",
+      "start": 122.58,
+      "duration": 12.67,
+      "styleProfile": "editorial-neutral",
+      "sceneMode": "talking-head",
+      "layoutProfile": "talking-head-progressive-stage",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "lower-right"],
+      "topology": "proof-to-open-source-cta",
+      "stateChange": "current-proof-to-future-open-source-and-follow",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle", "black-bars"],
+      "overlayBudget": 2,
+      "layers": [],
+      "semanticCues": [
+        {"id":"this-video-proof","kind":"text","composition":"hero-title","at":0.04,"stateAt":0.85,"exitAt":12.5,"hero":"这条视频","secondary":"Codex后期剪辑"},
+        {"id":"skill-iterating","kind":"steps","composition":"steps","at":2.0,"stateAt":3.0,"exitAt":12.5,"hero":"Skill继续迭代","nodes":["继续迭代","9月开源"]},
+        {"id":"save-follow","kind":"icon","composition":"hero-title","at":6.2,"stateAt":7.2,"exitAt":12.5,"hero":"收藏 / 关注","secondary":"开源时不会错过","symbol":"★"},
+        {"id":"next-episode","kind":"text","composition":"hero-title","at":10.0,"stateAt":10.8,"exitAt":12.5,"hero":"下期见"}
+      ]
+    }
+  ]
+}

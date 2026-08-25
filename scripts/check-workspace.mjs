@@ -1,24 +1,47 @@
-import {existsSync, readdirSync} from "node:fs";
+import {existsSync} from "node:fs";
 import path from "node:path";
 import {spawnSync} from "node:child_process";
-import {projectsRoot, remotionBin, workspaceRoot} from "./lib.mjs";
+import {
+  projectsRoot,
+  listProjectDirs,
+  remotionBin,
+  requireWinterVideoSkillRoot,
+  workspaceRoot,
+} from "./lib.mjs";
+
+let winterVideoSkillRoot;
+try {
+  winterVideoSkillRoot = requireWinterVideoSkillRoot();
+} catch (error) {
+  console.error(error.message);
+  process.exit(1);
+}
+
+const projectBase = path.join(
+  winterVideoSkillRoot,
+  "assets",
+  "remotion-project-base",
+);
 
 const required = [
   "package.json",
   "package-lock.json",
   "node_modules",
   "projects",
-  "templates/remotion-project",
   "scripts",
   "shared",
   "cache",
-  "templates/remotion-project/src/schema.ts",
-  "templates/remotion-project/src/Main.tsx",
-  "templates/remotion-project/src/components/Stage.tsx",
-  "templates/remotion-project/src/components/LayerTimeline.tsx",
-  "templates/remotion-project/src/components/BaseVideo.tsx",
-  "templates/remotion-project/src/components/HyperFramesOverlay.tsx",
-  "templates/remotion-project/work/timeline.json",
+];
+
+const requiredProjectBase = [
+  "src/schema.ts",
+  "src/Main.tsx",
+  "src/components/Stage.tsx",
+  "src/components/LayerTimeline.tsx",
+  "src/components/BaseVideo.tsx",
+  "src/components/HyperFramesOverlay.tsx",
+  "work/timeline.json",
+  "work/制作规格.md",
 ];
 
 let failed = false;
@@ -30,19 +53,23 @@ for (const item of required) {
   }
 }
 
+for (const item of requiredProjectBase) {
+  const absolute = path.join(projectBase, item);
+  if (!existsSync(absolute)) {
+    failed = true;
+    console.error(`Skill 公共工程底座缺少：${absolute}`);
+  }
+}
+
 if (!existsSync(remotionBin)) {
   failed = true;
   console.error(`缺少 Remotion CLI：${remotionBin}`);
 }
 
-const projects = existsSync(projectsRoot)
-  ? readdirSync(projectsRoot, {withFileTypes: true}).filter((item) =>
-      item.isDirectory(),
-    )
-  : [];
+const projects = listProjectDirs();
 
-for (const project of projects) {
-  const localModules = path.join(projectsRoot, project.name, "node_modules");
+for (const projectDir of projects) {
+  const localModules = path.join(projectDir, "node_modules");
   if (existsSync(localModules)) {
     failed = true;
     console.error(`项目中不应存在独立 node_modules：${localModules}`);
@@ -67,5 +94,7 @@ if (failed) {
 }
 
 console.log(`集中工作区有效：${workspaceRoot}`);
+console.log(`视频 Skill：${winterVideoSkillRoot}`);
+console.log(`工程底座：${projectBase}`);
 console.log(`共享依赖：${path.join(workspaceRoot, "node_modules")}`);
 console.log(`项目数量：${projects.length}`);

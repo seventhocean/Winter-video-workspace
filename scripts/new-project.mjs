@@ -1,17 +1,30 @@
 import {cpSync, existsSync, mkdirSync, readFileSync, writeFileSync} from "node:fs";
 import path from "node:path";
-import {projectsRoot, requireSlug, workspaceRoot} from "./lib.mjs";
+import {
+  getDatedProjectDir,
+  requireProjectDate,
+  requireSlug,
+  requireWinterVideoSkillRoot,
+  workspaceRoot,
+} from "./lib.mjs";
 
 const slug = requireSlug(process.argv[2]);
-const date = process.argv[3] ?? new Date().toISOString().slice(0, 10);
-const target = path.join(projectsRoot, slug);
-const template = path.join(workspaceRoot, "templates", "remotion-project");
+const date = requireProjectDate(
+  process.argv[3] ?? new Date().toISOString().slice(0, 10),
+);
+const projectId = `${date}/${slug}`;
+const target = getDatedProjectDir(date, slug);
+const skillRoot = requireWinterVideoSkillRoot();
+const template = path.join(skillRoot, "assets", "remotion-project-base");
 
 if (existsSync(target)) {
   throw new Error(`项目已经存在：${target}`);
 }
+if (!existsSync(path.join(template, "src", "Root.tsx"))) {
+  throw new Error(`winter-video-create 公共工程底座不完整：${template}`);
+}
 
-mkdirSync(projectsRoot, {recursive: true});
+mkdirSync(path.dirname(target), {recursive: true});
 cpSync(template, target, {recursive: true});
 
 writeFileSync(
@@ -19,9 +32,13 @@ writeFileSync(
   `${JSON.stringify(
     {
       slug,
+      projectId,
       created: date,
       workspace: workspaceRoot,
+      template: "winter-video-create/remotion-project-base",
+      templateSource: template,
       sourcePolicy: "link-only",
+      dependencyPolicy: "workspace-shared",
       deliveryStatus: "draft",
     },
     null,
@@ -36,4 +53,5 @@ const spec = readFileSync(specPath, "utf8")
 writeFileSync(specPath, spec);
 
 console.log(`已创建项目：${target}`);
-console.log(`下一步：npm run link-asset -- ${slug} /绝对路径/口播.mov source.mov`);
+console.log(`项目标识：${projectId}`);
+console.log(`下一步：npm run link-asset -- ${projectId} /绝对路径/口播.mov source.mov`);

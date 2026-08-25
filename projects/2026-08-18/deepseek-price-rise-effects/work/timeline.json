@@ -1,0 +1,34 @@
+{
+  "fps": 30,
+  "duration": 81.233333,
+  "scenes": [{
+    "sceneId": "deepseek-price-progressive-header",
+    "start": 0,
+    "duration": 81.233333,
+    "styleProfile": "clinical-tech",
+    "sceneMode": "talking-head",
+    "layoutProfile": "talking-head-progressive-stage",
+    "engine": "remotion",
+    "spatialAnchors": ["top-left", "top-right"],
+    "topology": "header-data-rail",
+    "stateChange": "price-rise-to-user-warning",
+    "protectedRegions": ["face", "mouth", "gesture", "subtitle", "embedded-assets"],
+    "overlayBudget": 1,
+    "layers": [],
+    "semanticCues": [
+      {"id":"price-alert","kind":"icon","composition":"hero-title","at":0.12,"stateAt":1.94,"exitAt":2.55,"hero":"突然涨价了","secondary":"DeepSeek price update","symbol":"↗"},
+      {"id":"liang-meme","kind":"steps","composition":"steps","at":2.5,"stateAt":5.38,"exitAt":6.05,"hero":"梁神 → 梁子","nodes":["梁神","梁子"]},
+      {"id":"price-multiple","kind":"metric","composition":"hero-stat","at":6.1,"stateAt":7.2,"exitAt":8.25,"hero":"4.5× / 12×","secondary":"涨价幅度"},
+      {"id":"v4-output","kind":"cost-compare","composition":"bars","at":8.0,"stateAt":14.48,"exitAt":15.0,"hero":"6元 → 27元","secondary":"V4 Pro 输出 ×4.5"},
+      {"id":"cache-price","kind":"cost-compare","composition":"bars","at":15.0,"stateAt":20.04,"exitAt":20.78,"hero":"0.025 → 0.30","secondary":"缓存命中 ×12"},
+      {"id":"cache-rate","kind":"metric","composition":"hero-stat","at":24.15,"stateAt":27.36,"exitAt":29.15,"hero":"99%","secondary":"小程序缓存命中"},
+      {"id":"peak-hours","kind":"steps","composition":"steps","at":37.75,"stateAt":43.02,"exitAt":43.35,"hero":"高峰时段","nodes":["09:00–12:00","14:00–18:00"]},
+      {"id":"opencode-pro","kind":"metric","composition":"bars","at":55.5,"stateAt":57.9,"exitAt":58.35,"hero":"-66%","secondary":"V4 Pro"},
+      {"id":"opencode-flash","kind":"metric","composition":"bars","at":58.2,"stateAt":60.5,"exitAt":60.82,"hero":"10%","secondary":"V4 Flash"},
+      {"id":"recovery","kind":"metric","composition":"bars","at":60.7,"stateAt":63.58,"exitAt":63.85,"hero":"20%","secondary":"今日恢复"},
+      {"id":"api-web","kind":"diagram","composition":"flow","at":66.55,"stateAt":71.06,"exitAt":71.45,"hero":"API → WEB","nodes":["API 涨价","网页版基本不受影响"]},
+      {"id":"bill-warning","kind":"icon","composition":"hero-title","at":71.3,"stateAt":75.86,"exitAt":76.3,"hero":"注意账单","secondary":"Coding / Agent 用户","symbol":"$"},
+      {"id":"comment","kind":"quote","composition":"quote","at":78.9,"stateAt":80.94,"exitAt":81.233333,"hero":"你在用什么 Coding Plan？","secondary":"评论区聊一聊"}
+    ]
+  }]
+}

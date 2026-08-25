@@ -1,0 +1,92 @@
+{
+  "fps": 30,
+  "duration": 10.4,
+  "scenes": [
+    {
+      "sceneId": "reference-playback",
+      "start": 0,
+      "duration": 5,
+      "styleProfile": "editorial-neutral",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "full-screen-asset",
+      "engine": "remotion",
+      "spatialAnchors": ["full", "top-left", "lower-right"],
+      "topology": "framed-reference",
+      "stateChange": "reference-progress-complete",
+      "protectedRegions": ["source-credit"],
+      "overlayBudget": 3,
+      "layers": [
+        {"id": "reference-video", "role": "primary", "kind": "asset-frame", "anchor": "full", "appearAt": 0, "exitAt": 5, "assetId": "reference-stable.mp4"},
+        {"id": "reference-label", "role": "context", "kind": "text", "anchor": "top-left", "appearAt": 0.1, "exitAt": 5, "title": "近期热门案例"},
+        {"id": "source-credit", "role": "support", "kind": "text", "anchor": "lower-right", "appearAt": 0.1, "exitAt": 5, "title": "参考素材：@栖光"}
+      ],
+      "motionBeats": [
+        {"at": 0, "phase": "establish", "action": "参考视频窗口建立"},
+        {"at": 1.2, "phase": "develop", "action": "参考视频持续播放并推进进度线"},
+        {"at": 4.5, "phase": "transform", "action": "准备进入定格拆解"},
+        {"at": 4.9, "phase": "resolve", "action": "参考播放完成"}
+      ]
+    },
+    {
+      "sceneId": "scale-deconstruction",
+      "start": 5,
+      "duration": 2,
+      "styleProfile": "editorial-neutral",
+      "sceneMode": "explainer",
+      "layoutProfile": "full-frame-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "center-left", "center-right", "lower-right"],
+      "topology": "split-analysis",
+      "stateChange": "three-scale-features-revealed",
+      "protectedRegions": ["source-credit"],
+      "overlayBudget": 4,
+      "layers": [
+        {"id": "reference-freeze", "role": "primary", "kind": "asset-frame", "anchor": "center-left", "appearAt": 0, "exitAt": 2, "assetId": "reference-freeze.jpg"},
+        {"id": "scale-features", "role": "support", "kind": "text", "anchor": "center-right", "appearAt": 0.4, "stateAt": 1.5, "exitAt": 2, "items": ["巨型建筑", "极小人物", "云海纵深"]},
+        {"id": "source-credit", "role": "support", "kind": "text", "anchor": "lower-right", "appearAt": 0, "exitAt": 2, "title": "参考素材：@栖光"}
+      ]
+    },
+    {
+      "sceneId": "skill-workflow",
+      "start": 7,
+      "duration": 2.5,
+      "styleProfile": "editorial-neutral",
+      "sceneMode": "explainer",
+      "layoutProfile": "full-frame-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "center-left", "center", "center-right"],
+      "topology": "horizontal-flow",
+      "stateChange": "input-to-video-complete",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "workflow-title", "role": "support", "kind": "text", "anchor": "top-left", "appearAt": 0, "exitAt": 2.5, "title": "天宫巨物 Skill"},
+        {"id": "workflow-flow", "role": "primary", "kind": "node-network", "anchor": "center", "appearAt": 0.25, "stateAt": 2, "exitAt": 2.5, "items": ["场景＋时长", "生成关键帧", "生成视频"]},
+        {"id": "workflow-result", "role": "support", "kind": "text", "anchor": "center-right", "appearAt": 1.3, "emphasizeAt": 2, "exitAt": 2.5, "title": "VIDEO"}
+      ]
+    },
+    {
+      "sceneId": "result-handoff",
+      "start": 9.5,
+      "duration": 0.9,
+      "styleProfile": "editorial-neutral",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "center", "full"],
+      "topology": "center-reveal",
+      "stateChange": "wipe-to-generated-result",
+      "protectedRegions": [],
+      "overlayBudget": 2,
+      "layers": [
+        {"id": "result-title", "role": "primary", "kind": "text", "anchor": "center", "appearAt": 0, "emphasizeAt": 0.4, "exitAt": 0.9, "title": "我的生成效果"},
+        {"id": "wipe", "role": "support", "kind": "text", "anchor": "full", "appearAt": 0.5, "stateAt": 0.9, "exitAt": 0.9, "title": "转场"}
+      ],
+      "motionBeats": [
+        {"at": 0, "phase": "establish", "action": "生成结果标题建立"},
+        {"at": 0.3, "phase": "transform", "action": "标题完成强调"},
+        {"at": 0.55, "phase": "resolve", "action": "米白擦除衔接自有示例"}
+      ]
+    }
+  ]
+}

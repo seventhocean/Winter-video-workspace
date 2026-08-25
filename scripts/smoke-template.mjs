@@ -1,10 +1,12 @@
 import {existsSync, rmSync} from "node:fs";
 import path from "node:path";
 import {spawnSync} from "node:child_process";
-import {projectsRoot, workspaceRoot} from "./lib.mjs";
+import {getDatedProjectDir, workspaceRoot} from "./lib.mjs";
 
-const slug = `stage-kit-smoke-${process.pid}`;
-const projectDir = path.join(projectsRoot, slug);
+const slug = `project-base-smoke-${process.pid}`;
+const date = "2026-07-28";
+const projectId = `${date}/${slug}`;
+const projectDir = getDatedProjectDir(date, slug);
 const validator = path.join(
   workspaceRoot,
   ".codex",
@@ -23,45 +25,45 @@ const run = (command, args, cwd = workspaceRoot) => {
 };
 
 try {
-  run("node", ["scripts/new-project.mjs", slug, "2026-07-28"]);
+  run("node", ["scripts/new-project.mjs", slug, date]);
   run("python3", [
     validator,
     path.join(projectDir, "work", "timeline.json"),
   ]);
-  run("node", ["scripts/lint.mjs", slug]);
-  run("node", ["scripts/compositions.mjs", slug]);
+  run("node", ["scripts/lint.mjs", projectId]);
+  run("node", ["scripts/compositions.mjs", projectId]);
   run("node", [
     "scripts/still.mjs",
-    slug,
-    "StageKitLandscape",
+    projectId,
+    "Main",
     "60",
     "smoke-landscape.png",
   ]);
   run("node", [
     "scripts/still.mjs",
-    slug,
-    "StageKitPortrait",
+    projectId,
+    "MainPortrait",
     "240",
     "smoke-portrait.png",
   ]);
   run("node", [
     "scripts/still.mjs",
-    slug,
-    "StageKitLandscape",
+    projectId,
+    "Main",
     "420",
     "smoke-semantic-landscape.png",
   ]);
   run("node", [
     "scripts/still.mjs",
-    slug,
-    "StageKitLandscape",
+    projectId,
+    "Main",
     "480",
     "smoke-semantic-signal.png",
   ]);
   run("node", [
     "scripts/still.mjs",
-    slug,
-    "StageKitPortrait",
+    projectId,
+    "MainPortrait",
     "600",
     "smoke-semantic-portrait.png",
   ]);
@@ -78,7 +80,7 @@ try {
     }
   }
 
-  console.log("Stage Kit 模板冒烟测试通过");
+  console.log("winter-video-create 公共工程底座冒烟测试通过");
 } finally {
   if (existsSync(projectDir)) {
     rmSync(projectDir, {recursive: true, force: true});

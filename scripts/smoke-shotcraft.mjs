@@ -1,10 +1,12 @@
 import {existsSync, rmSync} from "node:fs";
 import path from "node:path";
 import {spawnSync} from "node:child_process";
-import {projectsRoot, workspaceRoot} from "./lib.mjs";
+import {getDatedProjectDir, workspaceRoot} from "./lib.mjs";
 
 const slug = `shotcraft-smoke-${process.pid}`;
-const projectDir = path.join(projectsRoot, slug);
+const date = "2026-08-03";
+const projectId = `${date}/${slug}`;
+const projectDir = getDatedProjectDir(date, slug);
 
 const run = (command, args) => {
   const result = spawnSync(command, args, {
@@ -19,18 +21,18 @@ const run = (command, args) => {
 
 try {
   run("node", ["scripts/check-shotcraft.mjs"]);
-  run("node", ["scripts/new-shotcraft-project.mjs", slug, "2026-08-03"]);
-  run("node", ["scripts/compositions.mjs", slug]);
+  run("node", ["scripts/new-shotcraft-project.mjs", slug, date]);
+  run("node", ["scripts/compositions.mjs", projectId]);
   run("node", [
     "scripts/still.mjs",
-    slug,
+    projectId,
     "AiflPromo",
     "150",
     "shotcraft-smoke.png",
   ]);
   run("node", [
     "scripts/render.mjs",
-    slug,
+    projectId,
     "AiflPromo",
     "shotcraft-smoke.mp4",
     "--frames=0-29",

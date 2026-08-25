@@ -1,0 +1,30 @@
+{
+  "fps": 30,
+  "duration": 7,
+  "scenes": [
+    {
+      "sceneId": "closing-progressive",
+      "start": 0,
+      "duration": 7,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "talking-head",
+      "layoutProfile": "talking-head-progressive-stage",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "top-right"],
+      "topology": "five-resources-to-comment-package",
+      "stateChange": "resources-ready-to-signoff",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle"],
+      "overlayBudget": 1,
+      "layers": [],
+      "semanticCues": [
+        {"id": "five-plugins", "kind": "steps", "composition": "steps", "at": 0.25, "stateAt": 1.05, "exitAt": 1.10, "hero": "5", "suffix": "PLUGINS", "secondary": "五个插件", "nodes": ["1", "2", "3", "4", "5"]},
+        {"id": "names", "kind": "icon", "composition": "hero-title", "at": 1.02, "stateAt": 1.32, "exitAt": 1.48, "hero": "名字", "secondary": "五项名称依次补齐", "symbol": "N"},
+        {"id": "commands", "kind": "diagram", "composition": "flow", "at": 1.42, "stateAt": 2.38, "exitAt": 2.45, "hero": "命令", "secondary": "安装命令全部准备好", "nodes": ["name", "command", "ready"]},
+        {"id": "reply", "kind": "quote", "composition": "quote", "at": 2.38, "stateAt": 3.68, "exitAt": 4.05, "hero": "回复『插件』", "secondary": "领取名字与命令"},
+        {"id": "winter", "kind": "image", "composition": "profile", "at": 4.18, "stateAt": 4.68, "exitAt": 4.75, "hero": "WINTER", "secondary": "我是冬天"},
+        {"id": "next", "kind": "steps", "composition": "steps", "at": 4.68, "stateAt": 5.26, "exitAt": 5.34, "hero": "下期见", "secondary": "NEXT EPISODE", "nodes": ["NOW", "NEXT"]},
+        {"id": "bye", "kind": "icon", "composition": "hero-title", "at": 5.30, "stateAt": 5.58, "exitAt": 7, "hero": "拜拜", "secondary": "BYE", "symbol": "✋"}
+      ]
+    }
+  ]
+}

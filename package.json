@@ -10,6 +10,7 @@
     "link-asset": "node scripts/link-asset.mjs",
     "shotcraft:capture": "node scripts/shotcraft-capture.mjs",
     "check:shotcraft": "node scripts/check-shotcraft.mjs",
+    "check:threeui": "node scripts/check-threeui.mjs",
     "smoke:shotcraft": "node scripts/smoke-shotcraft.mjs",
     "studio": "node scripts/studio.mjs",
     "compositions": "node scripts/compositions.mjs",

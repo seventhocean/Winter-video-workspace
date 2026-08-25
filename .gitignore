@@ -7,6 +7,14 @@ projects/*/output/*
 !projects/*/output/.gitkeep
 projects/*/edit/*
 !projects/*/edit/.gitkeep
+# 日期分层后的新项目：projects/<YYYY-MM-DD>/<项目名>/...
+projects/*/*/public/*
+!projects/*/*/public/.gitkeep
+projects/*/*/output/*
+!projects/*/*/output/.gitkeep
+projects/*/*/edit/*
+!projects/*/*/edit/.gitkeep
 projects/*/work/verify/
+projects/*/*/work/verify/
 .DS_Store
 *.log

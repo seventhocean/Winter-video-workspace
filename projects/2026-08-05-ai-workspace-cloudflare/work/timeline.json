@@ -1,0 +1,419 @@
+{
+  "fps": 30,
+  "duration": 112.633333,
+  "scenes": [
+    {
+      "sceneId": "hook-expired-link",
+      "start": 0,
+      "duration": 6.05,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "talking-head",
+      "layoutProfile": "talking-head-editorial",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "lower-right"],
+      "topology": "local-callout",
+      "stateChange": "question-to-risk",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle"],
+      "overlayBudget": 2,
+      "layers": [
+        {"id": "hook-title", "role": "context", "kind": "text", "anchor": "top-left", "motionMode": "static-emphasis", "appearAt": 0.1, "exitAt": 5.9, "title": "THE PROBLEM", "body": "自己能打开，不等于长期可用", "accent": "danger"},
+        {"id": "hook-proof", "role": "primary", "kind": "text", "anchor": "lower-right", "motionMode": "dynamic-support", "appearAt": 0.3, "emphasizeAt": 2.2, "exitAt": 5.9, "title": "TEMPORARY LINK", "body": "过一段时间就打不开了", "accent": "danger"}
+      ]
+    },
+    {
+      "sceneId": "problem-12-hours",
+      "start": 6.05,
+      "duration": 6.1,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "center", "lower-left"],
+      "topology": "timeline",
+      "stateChange": "temporary-link-expires",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "temporary-title", "role": "primary", "kind": "text", "anchor": "center", "appearAt": 0.1, "emphasizeAt": 1.2, "exitAt": 5.8, "title": "TEMP LINK", "body": "只能生成一个临时链接", "accent": "danger"},
+        {"id": "temporary-limit", "role": "support", "kind": "metric-gauge", "anchor": "center-right", "appearAt": 0.3, "stateAt": 4.1, "exitAt": 5.8, "title": "LIMIT", "value": 12, "unit": "H", "accent": "danger"},
+        {"id": "temporary-clock", "role": "support", "kind": "clock-dial", "anchor": "center-right", "appearAt": 0.4, "stateAt": 4.1, "exitAt": 5.8, "title": "VALID WINDOW", "body": "12 小时倒计时", "accent": "danger"},
+        {"id": "expired-link", "role": "support", "kind": "status", "anchor": "lower-right", "appearAt": 1.7, "stateAt": 4.2, "exitAt": 5.8, "title": "LINK EXPIRED", "body": "临时地址失效", "accent": "danger"}
+      ],
+      "motionBeats": [
+        {"at": 0.2, "phase": "establish", "action": "临时链接主词先出现"},
+        {"at": 1.4, "phase": "develop", "action": "12 小时限制逐步接入"},
+        {"at": 4.4, "phase": "transform", "action": "限制线推进到失效状态"},
+        {"at": 5.5, "phase": "resolve", "action": "临时链接结论稳定停留"}
+      ]
+    },
+    {
+      "sceneId": "promise-long-term",
+      "start": 12.15,
+      "duration": 4.25,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "center", "center-right"],
+      "topology": "curved-flow",
+      "stateChange": "temporary-to-long-term",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "promise-title", "role": "primary", "kind": "text", "anchor": "center", "appearAt": 0.1, "emphasizeAt": 1.8, "exitAt": 4.0, "title": "LONG-TERM", "body": "做成长期可用", "accent": "success"},
+        {"id": "promise-flow", "role": "support", "kind": "node-network", "anchor": "center-right", "appearAt": 0.8, "stateAt": 2.5, "exitAt": 4.0, "title": "LINK STATE", "items": ["临时", "长期"], "accent": "success"},
+        {"id": "promise-availability", "role": "support", "kind": "status", "anchor": "lower-right", "appearAt": 1.0, "stateAt": 2.4, "exitAt": 4.0, "title": "PERMANENT", "body": "24/7 AVAILABLE", "accent": "success"}
+      ],
+      "motionBeats": [
+        {"at": 0.2, "phase": "establish", "action": "长期可用主词出现"},
+        {"at": 1.4, "phase": "develop", "action": "临时状态向长期状态移动"},
+        {"at": 2.6, "phase": "transform", "action": "长期状态完成高亮"},
+        {"at": 3.6, "phase": "resolve", "action": "长期链接结论停留"}
+      ]
+    },
+    {
+      "sceneId": "proof-desktop-mobile",
+      "start": 16.4,
+      "duration": 7.7,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "hybrid",
+      "spatialAnchors": ["top-left", "center-right", "lower-right"],
+      "topology": "split-compare",
+      "stateChange": "desktop-mobile-confirmed",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "proof-title", "role": "context", "kind": "text", "anchor": "top-left", "appearAt": 0.1, "exitAt": 7.5, "title": "THE RESULT", "body": "电脑、手机都能打开", "accent": "accent"},
+        {"id": "proof-desktop", "role": "primary", "kind": "asset-frame", "anchor": "center-right", "appearAt": 0.4, "stateAt": 2.1, "exitAt": 7.5, "assetId": "workbench-desktop.mov", "accent": "accent"},
+        {"id": "proof-mobile", "role": "support", "kind": "asset-frame", "anchor": "lower-right", "appearAt": 1.2, "stateAt": 3.0, "exitAt": 7.5, "assetId": "workbench-mobile.mov", "accent": "success"}
+      ],
+      "motionBeats": [
+        {"at": 0.2, "phase": "establish", "action": "效果章节与电脑端素材进入"},
+        {"at": 2.0, "phase": "develop", "action": "电脑端工作台保持可读"},
+        {"at": 4.0, "phase": "transform", "action": "手机端素材接入形成对照"},
+        {"at": 6.8, "phase": "resolve", "action": "电脑、手机和 APP 结论落版"}
+      ]
+    },
+    {
+      "sceneId": "step-one-workbuddy",
+      "start": 24.1,
+      "duration": 7.1,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "hybrid",
+      "spatialAnchors": ["top-left", "center-right", "lower-right"],
+      "topology": "steps",
+      "stateChange": "workspace-created",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "step-one", "role": "primary", "kind": "text", "anchor": "top-left", "appearAt": 0.1, "emphasizeAt": 1.1, "exitAt": 6.9, "title": "STEP 01", "body": "新建一个工作目录", "accent": "accent"},
+        {"id": "create-proof", "role": "asset", "kind": "asset-frame", "anchor": "center-right", "appearAt": 0.5, "stateAt": 2.4, "exitAt": 6.9, "assetId": "workbench-create.mov", "accent": "accent"}
+      ],
+      "motionBeats": [
+        {"at": 0.2, "phase": "establish", "action": "01 与 WorkBuddy 章节标题出现"},
+        {"at": 1.5, "phase": "develop", "action": "新建工作目录操作进入"},
+        {"at": 3.8, "phase": "transform", "action": "个人工作台与开始按钮逐项出现"},
+        {"at": 6.2, "phase": "resolve", "action": "工作台创建完成状态停留"}
+      ]
+    },
+    {
+      "sceneId": "step-two-cloudflare",
+      "start": 31.2,
+      "duration": 4.3,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "hybrid",
+      "spatialAnchors": ["top-left", "center-right", "lower-left"],
+      "topology": "curved-flow",
+      "stateChange": "deploy-command-sent",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "step-two", "role": "primary", "kind": "text", "anchor": "top-left", "appearAt": 0.1, "emphasizeAt": 1.1, "exitAt": 4.1, "title": "STEP 02", "body": "帮我用 Cloudflare 部署", "accent": "warning"},
+        {"id": "deploy-proof", "role": "asset", "kind": "asset-frame", "anchor": "center-right", "appearAt": 0.5, "stateAt": 1.8, "exitAt": 4.1, "assetId": "cloudflare-deploy.mov", "accent": "warning"}
+      ],
+      "motionBeats": [
+        {"at": 0.2, "phase": "establish", "action": "02 与部署命令出现"},
+        {"at": 1.6, "phase": "develop", "action": "Cloudflare 关键词接入"},
+        {"at": 2.7, "phase": "transform", "action": "部署动作完成确认"},
+        {"at": 3.7, "phase": "resolve", "action": "命令进入下一步授权状态"}
+      ]
+    },
+    {
+      "sceneId": "install-browser-auth",
+      "start": 35.5,
+      "duration": 8.65,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "hybrid",
+      "spatialAnchors": ["top-left", "center-left", "center-right"],
+      "topology": "state-change",
+      "stateChange": "tool-install-to-browser-login",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "install-title", "role": "primary", "kind": "text", "anchor": "top-left", "appearAt": 0.1, "exitAt": 8.4, "title": "AUTO SETUP", "body": "自动下载 wrangler", "accent": "accent"},
+        {"id": "browser-auth", "role": "support", "kind": "asset-frame", "anchor": "center-right", "appearAt": 1.2, "stateAt": 4.4, "exitAt": 8.4, "assetId": "cloudflare-deploy.mov", "accent": "warning"},
+        {"id": "login-state", "role": "support", "kind": "text", "anchor": "lower-left", "appearAt": 3.4, "stateAt": 5.2, "exitAt": 8.4, "title": "BROWSER LOGIN", "body": "登录 Cloudflare 账号", "accent": "warning"}
+      ],
+      "motionBeats": [
+        {"at": 0.2, "phase": "establish", "action": "自动配置章节与 wrangler 主词出现"},
+        {"at": 2.4, "phase": "develop", "action": "下载部署工具状态进入"},
+        {"at": 4.8, "phase": "transform", "action": "浏览器窗口从工具侧展开"},
+        {"at": 7.7, "phase": "resolve", "action": "Cloudflare 登录状态稳定停留"}
+      ]
+    },
+    {
+      "sceneId": "cloudflare-explained",
+      "start": 44.15,
+      "duration": 5.75,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "center", "lower-right"],
+      "topology": "curved-flow",
+      "stateChange": "local-to-cloud-link-created",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "cloudflare-definition", "role": "primary", "kind": "node-network", "anchor": "center", "appearAt": 0.2, "stateAt": 2.8, "exitAt": 5.5, "title": "CLOUDFLARE", "items": ["工作台", "云端服务器", "固定链接"], "accent": "warning"},
+        {"id": "cloudflare-copy", "role": "support", "kind": "text", "anchor": "top-left", "appearAt": 0.1, "exitAt": 5.5, "title": "免费云端服务器", "body": "从工作台到固定访问地址", "accent": "accent"},
+        {"id": "cloud-server", "role": "support", "kind": "server-stack", "anchor": "top-right", "appearAt": 0.4, "stateAt": 3.0, "exitAt": 5.5, "title": "FREE CLOUD SERVER", "body": "READY", "accent": "warning"}
+      ],
+      "motionBeats": [
+        {"at": 0.2, "phase": "establish", "action": "Cloudflare 概念与免费云端服务器出现"},
+        {"at": 2.1, "phase": "develop", "action": "工作台连接到云端节点"},
+        {"at": 3.5, "phase": "transform", "action": "云端服务器生成固定地址"},
+        {"at": 4.8, "phase": "resolve", "action": "固定访问链接稳定落位"}
+      ]
+    },
+    {
+      "sceneId": "authorize-once",
+      "start": 49.9,
+      "duration": 3.45,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "center", "lower-right"],
+      "topology": "state-change",
+      "stateChange": "authorization-unlocks-reuse",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "auth-one-time", "role": "primary", "kind": "metric-gauge", "anchor": "center", "appearAt": 0.1, "stateAt": 1.5, "exitAt": 3.2, "title": "ONE-TIME AUTHORIZATION", "value": 1, "unit": "×", "accent": "warning"},
+        {"id": "auth-result", "role": "support", "kind": "text", "anchor": "lower-right", "appearAt": 1.0, "stateAt": 2.2, "exitAt": 3.2, "title": "UNLOCKED", "body": "之后不再重复登录", "accent": "success"},
+        {"id": "auth-flow", "role": "support", "kind": "node-network", "anchor": "lower-left", "appearAt": 0.6, "stateAt": 2.0, "exitAt": 3.2, "title": "AUTH FLOW", "items": ["登录", "授权完成", "以后免登录"], "accent": "success"},
+        {"id": "auth-token", "role": "support", "kind": "status", "anchor": "top-right", "appearAt": 1.7, "stateAt": 2.3, "exitAt": 3.2, "title": "ACCESS TOKEN", "body": "SAVED", "accent": "success"}
+      ],
+      "motionBeats": [
+        {"at": 0.2, "phase": "establish", "action": "一次授权的大数字建立"},
+        {"at": 1.3, "phase": "transform", "action": "授权状态转为解锁"},
+        {"at": 2.8, "phase": "resolve", "action": "以后不再重复登录"}
+      ]
+    },
+    {
+      "sceneId": "upload-progress",
+      "start": 53.35,
+      "duration": 10.7,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "hybrid",
+      "spatialAnchors": ["top-left", "center-left", "center-right"],
+      "topology": "progress",
+      "stateChange": "workspace-upload-complete",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "upload-time", "role": "primary", "kind": "metric-gauge", "anchor": "center-left", "appearAt": 0.2, "stateAt": 6.4, "exitAt": 10.4, "title": "UPLOADING", "value": 20, "unit": "SEC", "accent": "success"},
+        {"id": "upload-proof", "role": "asset", "kind": "asset-frame", "anchor": "center-right", "appearAt": 1.2, "stateAt": 7.8, "exitAt": 10.4, "assetId": "deployed-link.png", "accent": "success"}
+      ],
+      "motionBeats": [
+        {"at": 0.2, "phase": "establish", "action": "20 秒计时与上传章节出现"},
+        {"at": 2.2, "phase": "develop", "action": "进度线从本地向云端推进"},
+        {"at": 6.5, "phase": "transform", "action": "部署完成截图接入并高亮链接"},
+        {"at": 9.5, "phase": "resolve", "action": "部署完成状态停留"}
+      ]
+    },
+    {
+      "sceneId": "permanent-link",
+      "start": 64.05,
+      "duration": 3.75,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "center", "lower-right"],
+      "topology": "state-change",
+      "stateChange": "temporary-link-replaced",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "permanent-title", "role": "primary", "kind": "text", "anchor": "center", "appearAt": 0.1, "emphasizeAt": 1.0, "exitAt": 3.5, "title": "PERMANENT LINK", "body": "不再受 12 小时限制", "accent": "success"},
+        {"id": "permanent-status", "role": "support", "kind": "text", "anchor": "center-right", "appearAt": 0.5, "stateAt": 2.0, "exitAt": 3.5, "title": "STATUS", "body": "长期可用", "accent": "success"},
+        {"id": "permanent-infinity", "role": "support", "kind": "metric-gauge", "anchor": "center-right", "appearAt": 0.5, "stateAt": 1.8, "exitAt": 3.5, "title": "AVAILABILITY", "value": 24, "unit": "/7", "accent": "success"},
+        {"id": "permanent-replacement", "role": "support", "kind": "state-change", "anchor": "lower-left", "appearAt": 0.9, "stateAt": 2.0, "exitAt": 3.5, "title": "12H → 24/7", "body": "临时状态被永久状态替换", "accent": "success"}
+      ],
+      "motionBeats": [
+        {"at": 0.2, "phase": "establish", "action": "永久链接主标题出现"},
+        {"at": 1.6, "phase": "transform", "action": "12 小时限制退出并切换为长期状态"},
+        {"at": 3.0, "phase": "resolve", "action": "永久可用结论停留"}
+      ]
+    },
+    {
+      "sceneId": "existing-workspace",
+      "start": 67.8,
+      "duration": 14.9,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "hybrid",
+      "spatialAnchors": ["top-left", "center-left", "center-right"],
+      "topology": "stack",
+      "stateChange": "folder-becomes-deployment-input",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "existing-title", "role": "primary", "kind": "data-stack", "anchor": "center-left", "appearAt": 0.2, "stateAt": 5.0, "exitAt": 14.5, "title": "ALREADY HAVE ONE", "items": ["工作台文件", "index.html", "assets/"], "accent": "warning"},
+        {"id": "existing-command", "role": "support", "kind": "text", "anchor": "top-left", "appearAt": 0.1, "exitAt": 14.5, "title": "操作更简单", "body": "把文件夹交给 WorkBuddy", "accent": "accent"},
+        {"id": "existing-proof", "role": "asset", "kind": "asset-frame", "anchor": "center-right", "appearAt": 1.5, "stateAt": 6.2, "exitAt": 14.5, "assetId": "cloudflare-deploy.mov", "accent": "accent"}
+      ],
+      "motionBeats": [
+        {"at": 0.2, "phase": "establish", "action": "已有工作台章节与文件夹主视觉出现"},
+        {"at": 3.2, "phase": "develop", "action": "文件层级逐项堆叠"},
+        {"at": 7.4, "phase": "transform", "action": "文件夹连接到 Cloudflare 部署命令"},
+        {"at": 13.3, "phase": "resolve", "action": "AI 自动完成与一次授权结论停留"}
+      ]
+    },
+    {
+      "sceneId": "add-to-home",
+      "start": 82.7,
+      "duration": 9.85,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "hybrid",
+      "spatialAnchors": ["top-left", "center-left", "center-right"],
+      "topology": "steps",
+      "stateChange": "browser-link-becomes-app-icon",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "mobile-title", "role": "primary", "kind": "text", "anchor": "top-left", "appearAt": 0.2, "emphasizeAt": 2.2, "exitAt": 9.5, "title": "SAVE TO HOME SCREEN", "body": "像 APP 一样使用", "accent": "warning"},
+        {"id": "mobile-proof", "role": "asset", "kind": "asset-frame", "anchor": "center-left", "appearAt": 0.7, "stateAt": 4.5, "exitAt": 9.5, "assetId": "workbench-mobile.mov", "accent": "accent"},
+        {"id": "home-proof", "role": "asset", "kind": "asset-frame", "anchor": "center-right", "appearAt": 3.0, "stateAt": 6.8, "exitAt": 9.5, "assetId": "save-to-home.jpg", "accent": "warning"}
+      ],
+      "motionBeats": [
+        {"at": 0.2, "phase": "establish", "action": "手机桌面章节标题出现"},
+        {"at": 2.2, "phase": "develop", "action": "手机工作台录屏进入"},
+        {"at": 5.4, "phase": "transform", "action": "分享菜单与添加到主屏幕证据出现"},
+        {"at": 8.7, "phase": "resolve", "action": "APP 入口结论停留"}
+      ]
+    },
+    {
+      "sceneId": "share-link",
+      "start": 92.55,
+      "duration": 5.65,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "hybrid",
+      "spatialAnchors": ["top-left", "center-right", "lower-right"],
+      "topology": "network",
+      "stateChange": "private-link-becomes-shareable",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "share-title", "role": "primary", "kind": "node-network", "anchor": "center-right", "appearAt": 0.2, "stateAt": 2.6, "exitAt": 5.4, "title": "SHARE THE LINK", "items": ["你", "链接", "其他人"], "accent": "success"},
+        {"id": "share-copy", "role": "support", "kind": "text", "anchor": "top-left", "appearAt": 0.1, "exitAt": 5.4, "title": "分享给其他人", "body": "打开链接就能使用", "accent": "success"},
+        {"id": "share-proof", "role": "asset", "kind": "asset-frame", "anchor": "lower-right", "appearAt": 1.2, "stateAt": 3.8, "exitAt": 5.4, "assetId": "deployed-link.png", "accent": "success"}
+      ],
+      "motionBeats": [
+        {"at": 0.2, "phase": "establish", "action": "分享给其他人主词出现"},
+        {"at": 2.0, "phase": "develop", "action": "部署链接证据接入"},
+        {"at": 3.5, "phase": "transform", "action": "其他人节点接入链接"},
+        {"at": 4.8, "phase": "resolve", "action": "其他人打开即可使用"}
+      ]
+    },
+    {
+      "sceneId": "online-tool",
+      "start": 98.2,
+      "duration": 6.95,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "center", "center-right"],
+      "topology": "curved-flow",
+      "stateChange": "local-file-becomes-online-tool",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "online-title", "role": "primary", "kind": "text", "anchor": "top-left", "appearAt": 0.1, "exitAt": 6.7, "title": "FROM FILE", "body": "变成在线工具", "accent": "success"},
+        {"id": "online-flow", "role": "support", "kind": "node-network", "anchor": "center", "appearAt": 0.8, "stateAt": 3.1, "exitAt": 6.7, "title": "ONLINE TOOL", "items": ["电脑文件", "固定链接", "在线工具"], "accent": "success"},
+        {"id": "online-capabilities", "role": "support", "kind": "status", "anchor": "center-right", "appearAt": 0.9, "stateAt": 2.5, "exitAt": 6.7, "title": "CAPABILITIES", "items": ["电脑打开", "手机访问", "分享他人"], "accent": "success"}
+      ],
+      "motionBeats": [
+        {"at": 0.2, "phase": "establish", "action": "电脑文件主词落位"},
+        {"at": 1.8, "phase": "develop", "action": "固定链接节点接入"},
+        {"at": 3.8, "phase": "transform", "action": "在线工具完成高亮"},
+        {"at": 6.1, "phase": "resolve", "action": "长期打开与分享价值稳定停留"}
+      ]
+    },
+    {
+      "sceneId": "final-thought",
+      "start": 105.15,
+      "duration": 4.6,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "asset-visual",
+      "layoutProfile": "chaptered-motion-explainer",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "center", "center-right"],
+      "topology": "state-change",
+      "stateChange": "build-to-use",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {"id": "first-step", "role": "primary", "kind": "text", "anchor": "center", "appearAt": 0.1, "exitAt": 4.4, "title": "FIRST STEP", "body": "工作台做出来只是第一步", "accent": "accent"},
+        {"id": "real-success", "role": "support", "kind": "text", "anchor": "center-right", "appearAt": 1.5, "stateAt": 2.8, "exitAt": 4.4, "title": "真正做好", "body": "长期打开、拿来使用", "accent": "success"},
+        {"id": "success-checklist", "role": "support", "kind": "progress", "anchor": "center-right", "appearAt": 0.6, "stateAt": 2.8, "exitAt": 4.4, "title": "REAL VALUE", "items": ["创建工作台", "部署上线", "长期使用"], "accent": "success"}
+      ],
+      "motionBeats": [
+        {"at": 0.2, "phase": "establish", "action": "第一步主词与 01 视觉出现"},
+        {"at": 1.8, "phase": "transform", "action": "长期使用从右侧接入并完成强调"},
+        {"at": 3.8, "phase": "resolve", "action": "真正做好结论稳定停留"}
+      ]
+    },
+    {
+      "sceneId": "closing-cta",
+      "start": 109.75,
+      "duration": 2.883333,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "talking-head",
+      "layoutProfile": "talking-head-editorial",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "lower-right"],
+      "topology": "local-callout",
+      "stateChange": "explanation-to-comment-cta",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle"],
+      "overlayBudget": 2,
+      "layers": [
+        {"id": "closing-title", "role": "context", "kind": "text", "anchor": "top-left", "motionMode": "static-emphasis", "appearAt": 0.1, "exitAt": 2.7, "title": "COMMENT", "body": "评论区聊一聊", "accent": "success"},
+        {"id": "closing-cta", "role": "primary", "kind": "text", "anchor": "lower-right", "motionMode": "dynamic-support", "appearAt": 0.4, "emphasizeAt": 1.2, "exitAt": 2.7, "title": "YOUR WORKSPACE", "body": "让我看看你的专属工作台", "accent": "accent"}
+      ],
+      "motionBeats": [
+        {"at": 0.1, "phase": "establish", "action": "评论区章节标题出现"},
+        {"at": 0.9, "phase": "transform", "action": "专属工作台 CTA 被强调"},
+        {"at": 2.1, "phase": "resolve", "action": "评论区行动提示停留"}
+      ]
+    }
+  ]
+}

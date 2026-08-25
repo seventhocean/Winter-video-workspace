@@ -1,0 +1,11 @@
+{
+  "slug": "deepseek-plugin-overlays",
+  "projectId": "2026-08-16/deepseek-plugin-overlays",
+  "created": "2026-08-16",
+  "workspace": "/Users/winter/Documents/Project/Winter-video-workspace",
+  "template": "winter-video-create/remotion-project-base",
+  "templateSource": "/Users/winter/Documents/Project/Winter-video-workspace/.codex/skills/winter-video-create/assets/remotion-project-base",
+  "sourcePolicy": "link-only",
+  "dependencyPolicy": "workspace-shared",
+  "deliveryStatus": "delivered"
+}

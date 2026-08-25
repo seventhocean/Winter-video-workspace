@@ -1,0 +1,185 @@
+{
+  "fps": 30,
+  "duration": 24,
+  "scenes": [
+    {
+      "sceneId": "talking-head-key-line",
+      "start": 0,
+      "duration": 6,
+      "styleProfile": "editorial-neutral",
+      "sceneMode": "talking-head",
+      "layoutProfile": "talking-head-editorial",
+      "engine": "remotion",
+      "spatialAnchors": ["top-left", "center-right"],
+      "topology": "local-progress",
+      "stateChange": "progress-complete",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle"],
+      "overlayBudget": 2,
+      "layers": [
+        {
+          "id": "key-line",
+          "role": "context",
+          "kind": "text",
+          "anchor": "top-left",
+          "motionMode": "static-emphasis",
+          "appearAt": 0.1,
+          "exitAt": 5.8,
+          "title": "重点台词",
+          "body": "人物是主体，动效补充证据",
+          "accent": "accent"
+        },
+        {
+          "id": "visual-proof",
+          "role": "primary",
+          "kind": "metric-gauge",
+          "anchor": "center-right",
+          "motionMode": "dynamic-support",
+          "appearAt": 0.32,
+          "emphasizeAt": 2.4,
+          "exitAt": 5.8,
+          "title": "语义完成度",
+          "value": 92,
+          "unit": "%",
+          "accent": "success"
+        }
+      ]
+    },
+    {
+      "sceneId": "complex-system-explainer",
+      "start": 6,
+      "duration": 6,
+      "styleProfile": "editorial-neutral",
+      "sceneMode": "explainer",
+      "layoutProfile": "full-frame-explainer",
+      "engine": "hybrid",
+      "spatialAnchors": ["top-left", "center-right", "lower-left"],
+      "topology": "network",
+      "stateChange": "tools-connected",
+      "protectedRegions": [],
+      "overlayBudget": 5,
+      "layers": [
+        {
+          "id": "system-network",
+          "role": "primary",
+          "kind": "node-network",
+          "anchor": "center-right",
+          "appearAt": 0.18,
+          "stateAt": 2.4,
+          "exitAt": 5.8,
+          "title": "HYBRID STAGE",
+          "items": ["Remotion", "HyperFrames", "真实素材", "最终合成"],
+          "accent": "accent"
+        },
+        {
+          "id": "context-label",
+          "role": "support",
+          "kind": "text",
+          "anchor": "top-left",
+          "appearAt": 0.06,
+          "exitAt": 5.8,
+          "title": "复杂解释才升级",
+          "body": "一个时间轴，两种引擎",
+          "accent": "warning"
+        },
+        {
+          "id": "ready-state",
+          "role": "support",
+          "kind": "metric-gauge",
+          "anchor": "lower-left",
+          "appearAt": 0.86,
+          "emphasizeAt": 3.2,
+          "exitAt": 5.8,
+          "title": "READY",
+          "value": 100,
+          "unit": "%",
+          "accent": "success"
+        }
+      ]
+    },
+    {
+      "sceneId": "semantic-temperature-and-signal",
+      "start": 12,
+      "duration": 6,
+      "styleProfile": "clinical-tech",
+      "sceneMode": "talking-head",
+      "layoutProfile": "talking-head-semantic-rail",
+      "engine": "hybrid",
+      "spatialAnchors": ["top-left", "top-right"],
+      "topology": "diagnostic-rail",
+      "stateChange": "safe-temperature-to-remote-action",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle"],
+      "overlayBudget": 1,
+      "layers": [],
+      "semanticCues": [
+        {
+          "id": "temperature-danger",
+          "kind": "thermometer",
+          "at": 0.1,
+          "stateAt": 1.35,
+          "exitAt": 3,
+          "title": "01 · 温度监测 BOT",
+          "label": "育苗大棚 · 高温",
+          "valueFrom": 22,
+          "valueTo": 40,
+          "unit": "°C",
+          "accent": "danger"
+        },
+        {
+          "id": "remote-signal",
+          "kind": "signal-flow",
+          "at": 3,
+          "stateAt": 3.75,
+          "exitAt": 5.8,
+          "title": "02 · 远程控制",
+          "label": "一个指令，抵达现场",
+          "nodes": ["手机指令", "Worker", "ESP32", "电机"],
+          "accent": "accent"
+        }
+      ]
+    },
+    {
+      "sceneId": "semantic-translation-and-gps",
+      "start": 18,
+      "duration": 6,
+      "styleProfile": "editorial-neutral",
+      "sceneMode": "talking-head",
+      "layoutProfile": "talking-head-progressive-stage",
+      "engine": "hybrid",
+      "spatialAnchors": ["top-left", "top-right"],
+      "topology": "stack",
+      "stateChange": "voice-to-translation-to-auto-log",
+      "protectedRegions": ["face", "mouth", "gesture", "subtitle"],
+      "overlayBudget": 1,
+      "layers": [],
+      "semanticCues": [
+        {
+          "id": "translation-wave",
+          "kind": "icon",
+          "composition": "hero-title",
+          "at": 0.1,
+          "stateAt": 1.15,
+          "exitAt": 3,
+          "eyebrow": "VOICE TO MEANING · 先说清楚",
+          "hero": "理解",
+          "secondary": "声音先变成可理解的信息",
+          "symbol": "✦",
+          "body": "让观众先抓住一句可以继续理解的话。"
+        },
+        {
+          "id": "gps-route",
+          "kind": "steps",
+          "composition": "steps",
+          "at": 3,
+          "stateAt": 3.8,
+          "exitAt": 5.8,
+          "eyebrow": "NEXT ACTION · 再往下推进",
+          "hero": "3",
+          "suffix": "STEP",
+          "secondary": "把理解变成下一步行动",
+          "nodes": ["看见重点", "形成关系", "进入行动"],
+          "body": "每一步都在前一步的基础上继续增加。"
+        }
+      ]
+    }
+  ]
+}
