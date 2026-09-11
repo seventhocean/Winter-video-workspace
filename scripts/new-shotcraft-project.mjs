@@ -74,6 +74,12 @@ writeFileSync(
       sourcePolicy: "link-only",
       dependencyPolicy: "workspace-shared",
       deliveryStatus: "draft",
+      lifecycle: {
+        state: "active",
+        retentionDays: 30,
+        keep: false,
+        deleteAfter: null,
+      },
     },
     null,
     2,

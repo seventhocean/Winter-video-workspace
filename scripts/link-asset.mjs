@@ -1,4 +1,11 @@
-import {existsSync, lstatSync, mkdirSync, symlinkSync} from "node:fs";
+import {
+  existsSync,
+  linkSync,
+  lstatSync,
+  mkdirSync,
+  readFileSync,
+  writeFileSync,
+} from "node:fs";
 import path from "node:path";
 import {getProjectDir} from "./lib.mjs";
 
@@ -28,5 +35,29 @@ if (existsSync(target) || (() => {
   throw new Error(`目标已经存在：${target}`);
 }
 
-symlinkSync(source, target);
-console.log(`已建立素材链接：${target} -> ${source}`);
+try {
+  // Remotion copies files from public/ into its render bundle but does not
+  // follow symlinks. A hard link remains zero-copy while appearing as a
+  // regular file to the bundler.
+  linkSync(source, target);
+} catch (error) {
+  if (error?.code === "EXDEV") {
+    throw new Error(
+      `素材与工程不在同一磁盘，无法建立 Remotion 可读取的零拷贝硬链接：${source}`,
+    );
+  }
+  throw error;
+}
+console.log(`已建立素材硬链接：${target} -> ${source}`);
+
+if (/^source\.(mov|mp4|m4v|webm)$/i.test(alias)) {
+  const timelinePath = path.join(projectDir, "work", "timeline.json");
+  if (existsSync(timelinePath)) {
+    const timeline = JSON.parse(readFileSync(timelinePath, "utf8"));
+    if (timeline.mode === "talking-head-enhancement") {
+      timeline.sourceFile = alias;
+      writeFileSync(timelinePath, `${JSON.stringify(timeline, null, 2)}\n`);
+      console.log(`已同步口播底片：work/timeline.json -> ${alias}`);
+    }
+  }
+}

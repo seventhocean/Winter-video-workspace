@@ -26,9 +26,15 @@ const projectBase = path.join(
 const required = [
   "package.json",
   "package-lock.json",
+  "README.md",
   "node_modules",
   "projects",
+  "projects/.gitkeep",
   "scripts",
+  "scripts/project-lifecycle.mjs",
+  "scripts/projects-status.mjs",
+  "scripts/set-retention.mjs",
+  "scripts/cleanup-projects.mjs",
   "shared",
   "cache",
 ];
@@ -37,9 +43,10 @@ const requiredProjectBase = [
   "src/schema.ts",
   "src/Main.tsx",
   "src/components/Stage.tsx",
-  "src/components/LayerTimeline.tsx",
   "src/components/BaseVideo.tsx",
-  "src/components/HyperFramesOverlay.tsx",
+  "src/components/ReferenceGradeTalkingHeadStage.tsx",
+  "src/components/SubtitleLayer.tsx",
+  "src/components/SafeZone.tsx",
   "work/timeline.json",
   "work/制作规格.md",
 ];

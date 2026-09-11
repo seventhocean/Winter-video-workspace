@@ -18,6 +18,9 @@
     "render": "node scripts/render.mjs",
     "still": "node scripts/still.mjs",
     "deliver": "node scripts/deliver.mjs",
+    "projects": "node scripts/projects-status.mjs",
+    "retention": "node scripts/set-retention.mjs",
+    "cleanup": "node scripts/cleanup-projects.mjs",
     "check": "node scripts/check-workspace.mjs",
     "smoke": "node scripts/smoke-template.mjs",
     "hyperframes": "npx --yes hyperframes@0.7.77"

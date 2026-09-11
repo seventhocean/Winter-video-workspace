@@ -1,20 +1,9 @@
 node_modules/
 cache/*
 !cache/.gitkeep
-projects/*/public/*
-!projects/*/public/.gitkeep
-projects/*/output/*
-!projects/*/output/.gitkeep
-projects/*/edit/*
-!projects/*/edit/.gitkeep
-# 日期分层后的新项目：projects/<YYYY-MM-DD>/<项目名>/...
-projects/*/*/public/*
-!projects/*/*/public/.gitkeep
-projects/*/*/output/*
-!projects/*/*/output/.gitkeep
-projects/*/*/edit/*
-!projects/*/*/edit/.gitkeep
-projects/*/work/verify/
-projects/*/*/work/verify/
+!cache/README.md
+# 单期工程属于可删除的工作数据，不进入中央工作区版本历史。
+projects/**
+!projects/.gitkeep
 .DS_Store
 *.log
