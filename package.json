@@ -21,6 +21,7 @@
     "projects": "node scripts/projects-status.mjs",
     "retention": "node scripts/set-retention.mjs",
     "cleanup": "node scripts/cleanup-projects.mjs",
+    "audit": "node scripts/audit-workspace.mjs",
     "check": "node scripts/check-workspace.mjs",
     "smoke": "node scripts/smoke-template.mjs",
     "hyperframes": "npx --yes hyperframes@0.7.77"

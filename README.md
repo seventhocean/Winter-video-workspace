@@ -11,6 +11,7 @@ scripts/                           建项目、素材链接、检查、渲染、
 .codex/skills/                     Skill 入口链接，真实 Skill 保存在各自仓库
 shared/                            至少被两个真实项目验证过的公共组件
 cache/                             确实会跨项目复用的工具缓存
+docs/history/                      只在恢复旧工程时查阅的历史记录
 ```
 
 ## 单期工作目录
@@ -44,6 +45,9 @@ npm run link-asset -- <日期/项目名> <原片绝对路径> source.mov
 
 # 查看所有项目、状态和真正可释放的空间
 npm run projects
+
+# 审计顶层残留、孤立脚本、缓存和项目内重复依赖
+npm run audit
 
 # 改为交付后保留 7 天、30 天或永久保留
 npm run retention -- <日期/项目名> 7

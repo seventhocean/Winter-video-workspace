@@ -35,8 +35,10 @@ const required = [
   "scripts/projects-status.mjs",
   "scripts/set-retention.mjs",
   "scripts/cleanup-projects.mjs",
+  "scripts/audit-workspace.mjs",
   "shared",
   "cache",
+  "docs/history",
 ];
 
 const requiredProjectBase = [

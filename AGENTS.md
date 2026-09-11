@@ -16,7 +16,7 @@
 6. Obsidian 只保存口播稿、分镜、事实口径、制作记录和成片路径，不再保存可安装的视频工程。
 7. 根目录的 `node_modules`、Remotion 浏览器、`~/.npm` 和 HyperFrames NPX 缓存属于共享工具缓存，默认保留。
 8. 清理单期项目时不得删除共享依赖；先区分原始素材、最终资产、可再生预览和工具缓存。
-9. 首次在本会话执行项目创建、制作或渲染前，读取本 AGENTS.md 和对应 Skill，并运行 `npm run check`；环境变化或出现相关故障时再复检。纯阅读、审阅和文案整理不以运行环境检查为前置。预检失败时定位受影响资源，只暂停依赖该资源的步骤，其余已授权工作继续。恢复历史项目状态时再读取 `会话交接（2026-07-28）.md`，其中的历史流程按当前规则核对。原有的正式渲染前风格确认要求保留在 `winter-video-create` 的“先做短样片”一节，已有明确批准可按其范围复用。
+9. 首次在本会话执行项目创建、制作或渲染前，读取本 AGENTS.md 和对应 Skill，并运行 `npm run check`；环境变化或出现相关故障时再复检。纯阅读、审阅和文案整理不以运行环境检查为前置。预检失败时定位受影响资源，只暂停依赖该资源的步骤，其余已授权工作继续。恢复历史项目状态时再读取 `docs/history/2026-07-28-workspace-handoff.md`，其中的历史流程按当前规则核对。原有的正式渲染前风格确认要求保留在 `winter-video-create` 的“先做短样片”一节，已有明确批准可按其范围复用。
 10. `npm run new` 直接从 `winter-video-create/assets/remotion-project-base/` 创建项目；工作区不得再维护一份独立的 Remotion 模板副本。
 11. `projects/` 是可删除的单期工作数据，不进入 Git；共享能力只能留在 Skill、根目录脚本或经过复用验证的 `shared/` 中。
 12. 新项目默认在正式交付后保留 30 天；可调整为 7 天、其他天数或永久保留。自动清理只处理已交付且到期的完整项目目录，并必须再次验证交付文件的 SHA-256。
@@ -47,6 +47,7 @@ npm run projects
 npm run retention -- <项目名> <7|30|keep>
 npm run cleanup
 npm run cleanup -- --confirm
+npm run audit
 npm run smoke
 ```
 
